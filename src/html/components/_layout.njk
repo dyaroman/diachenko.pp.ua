@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{% block title %} {{ siteName }} {% endblock %}</title>
+  {% include "./_head.njk" %}
+</head>
+<body class="page_{% block page_name %}{% endblock %}">
+<div class="page_wrapper">
+  {% include "./_header.njk" %}
+
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "./_footer.njk" %}
+</div>
+{% include "./_footerScripts.njk" %}
+{% block page_scripts %}{% endblock %}
+</body>
+</html>

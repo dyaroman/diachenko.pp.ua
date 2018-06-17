@@ -1,0 +1,161 @@
+{% extends "./components/_layout.njk" %}
+
+{% block title %}{{ person }}{% endblock %}
+
+{% block page_name %}index{% endblock %}
+
+{% block content %}
+  <div class="resume">
+    <div class="img_holder">
+      <img src="./images/img.jpg" alt="Roman Dyachenko" class="img">
+    </div>
+    <div class="container container--fio">
+      <div class="col tar">
+        <h1 class="fio">Roman</h1>
+      </div>
+      <div class="col tal">
+        <h1 class="fio">Dyachenko</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col tar">
+        <div class="row">
+          <h3>Опыт</h3>
+          <ul class="experience">
+            <li class="experience__item">
+              <div class="experience__company">LeadsMarket</div>
+              <div class="experience__position">HTML-coder</div>
+              <div class="experience__period">Сентябрь 2017</div>
+              <p class="experience__description">Перенос солюшенов с Visual Studio на webpack. Поддержка существующих и
+                верстка новых проектов на ASP.NET MVC.</p>
+            </li>
+
+            <li class="experience__item">
+              <div class="experience__company">Forforce</div>
+              <div class="experience__position">HTML-coder</div>
+              <div class="experience__period">Март 2016 - Август 2017</div>
+              <p class="experience__description">Адаптивная, кроссбраузерная верстка сайтов. Поддержка существующих и
+                верстка новых проектов на PrestaShop.</p>
+            </li>
+
+            <li class="experience__item">
+              <div class="experience__company">PixWhite</div>
+              <div class="experience__position">HTML-coder</div>
+              <div class="experience__period">Май 2015 - Февраль 2016</div>
+              <p class="experience__description">Адаптивная, кроссбраузерная верстка статичных сайтов.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col tal">
+        <div class="row">
+          <h3>Контакты</h3>
+          <dl>
+            <dt>Почта</dt>
+            <dd>
+              <a href="mailto:dyaroman@gmail.com" target="_blank">dyaroman@gmail.com</a>
+            </dd>
+            <dt>Телефон</dt>
+            <dd>
+              <a href="tel:+380958395688" target="_blank">095-83-95-688</a>
+            </dd>
+            <dt>GitHub</dt>
+            <dd>
+              <a href="https://github.com/dyaroman" target="_blank">github.com
+                <wbr>
+                /dyaroman</a>
+            </dd>
+            <dt>LinkedIn</dt>
+            <dd>
+              <a href="https://linkedin.com/in/dyaroman" target="_blank">linkedin.com
+                <wbr>
+                /in/dyaroman</a>
+            </dd>
+            <dt>Город проживания</dt>
+            <dd>Каменское</dd>
+          </dl>
+        </div>
+        <div class="row">
+          <h3>Образование</h3>
+          <dl>
+            <dt>Днепропетровский национальный университет железнодорожного транспорта.</dt>
+            <dd>Автоматика, телемеханика и связь.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col tar">
+        <div class="row">
+          <h3>Навыки</h3>
+          <ul class="skills">
+            <li class="skills__item">CSS препроцессоры: SCSS, LESS</li>
+            <li class="skills__item">HTML шаблонизаторы: twig, nunjucks</li>
+            <li class="skills__item">JS на уровне джуна</li>
+            <li class="skills__item">Таск раннер: Gulp</li>
+            <li class="skills__item">Система контроля версий: Git</li>
+            <li class="skills__item">GitHub, GitLab, Bitbucket</li>
+            <li class="skills__item">PhotoShop, Zeplin, InVision</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col tal">
+        <div class="row">
+          <h3>Примеры работ</h3>
+          <ul class="work_examples">
+            <li class="work_examples__item">
+              <a href="https://autoinsurancedojo.com" target="_blank" class="work_examples__link">Auto
+                <wbr>
+                Insurance
+                <wbr>
+                Dojo.com</a>
+            </li>
+
+            <li class="work_examples__item">
+              <a href="https://carinsurancedojo.com" target="_blank" class="work_examples__link">Car
+                <wbr>
+                Insurance
+                <wbr>
+                Dojo.com</a>
+            </li>
+
+            <li class="work_examples__item">
+              <a href="https://carinsurancequotespot.com" target="_blank" class="work_examples__link">Car
+                <wbr>
+                Insurance
+                <wbr>
+                QuoteSpot.com</a>
+            </li>
+
+            <li class="work_examples__item">
+              <a href="https://carinsuranceheaven.com" target="_blank" class="work_examples__link">Car
+                <wbr>
+                Insurance
+                <wbr>
+                Heaven.com</a>
+            </li>
+
+            <li class="work_examples__item">
+              <a href="https://getinsuredusa.com" target="_blank" class="work_examples__link">Get
+                <wbr>
+                Insured
+                <wbr>
+                USA.com</a>
+            </li>
+
+            <li class="work_examples__item">
+              <a href="https://5watt.ua" target="_blank" class="work_examples__link">5watt.ua</a>
+            </li>
+
+            <li class="work_examples__item">
+              <a href="https://edem.ua" target="_blank" class="work_examples__link">edem.ua</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_scripts %}
+{% endblock %}

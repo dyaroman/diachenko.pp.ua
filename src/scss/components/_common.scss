@@ -1,0 +1,159 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  color: inherit;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.resume {
+  max-width: 960px;
+  width: 100%;
+  padding: 30px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+
+.row {
+  margin-bottom: 30px;
+}
+
+.img_holder {
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.img {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.experience__company {
+  font-weight: 700;
+}
+
+.experience__position {
+  font-weight: 300;
+}
+
+.experience__period {
+  font-style: italic;
+}
+
+dt {
+  font-weight: 700;
+}
+
+.work_examples {
+  padding-left: 30px;
+  list-style: disc;
+}
+
+.download {
+  display: block;
+  height: 50px;
+  padding: 0 12px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 50px;
+  border-radius: 30px;
+  background-color: rgb(25, 201, 83);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media print,
+(min-width: 720px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col {
+    width: 48%;
+  }
+
+  .tal {
+    text-align-last: left;
+  }
+
+  .tar {
+    text-align: right;
+  }
+}
+
+@media (min-width: 720px) {
+  .download:before {
+    content: 'download ';
+  }
+
+  .download:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+@media (max-width: 719px) {
+  .container--fio {
+    text-align: center;
+  }
+}
+
+@media print {
+  .resume {
+    width: 21cm;
+    height: 29.68cm;
+    padding: 30px 15px;
+    -webkit-print-color-adjust: exact;
+    page-break-after: auto;
+    overflow: hidden;
+  }
+
+  a[href^="http"]:before {
+    content: 'https://';
+  }
+
+  .download {
+    display: none;
+  }
+}
