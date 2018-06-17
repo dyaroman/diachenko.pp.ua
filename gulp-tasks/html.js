@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const nunjucks = require('gulp-nunjucks');
 const data = require('gulp-data');
-const merge = require('deepmerge');
 const notify = require('gulp-notify');
 const rename = require('gulp-rename');
 
