@@ -1,10 +1,11 @@
 const gulp = require('gulp');
+const connect = require('gulp-connect');
+const puppeteer = require('puppeteer');
 
 const htmlTask = require('./gulp-tasks/html');
 const stylesTask = require('./gulp-tasks/styles');
 const jsTask = require('./gulp-tasks/scripts');
 const imagesTask = require('./gulp-tasks/images');
-const connect = require('gulp-connect');
 
 gulp.task('html', () => {
   console.log(`build html`);
@@ -35,11 +36,6 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('copy', () => {
-  return gulp.src([`./assets/copyToRoot/**/*.*`, `./src/assets/copyToRoot/**/*.*`])
-    .pipe(gulp.dest(`./dest/`));
-});
-
 gulp.task('watch', () => {
   htmlTask.htmlWatcher();
   stylesTask.cssWatcher();
@@ -48,16 +44,32 @@ gulp.task('watch', () => {
   gulp.task('server')();
 });
 
-gulp.task('build', (cb) => {
-  const start = new Date();
+gulp.task('pdf', () => {
+  gulp.task('server')();
 
+  const exit = process.exit;
+
+  (async () => {
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    const page = await browser.newPage();
+    await page.goto(`http://localhost:8080`, {
+      waitUntil: 'networkidle2'
+    });
+    await page.pdf({
+      path: './dest/cv.pdf',
+      format: 'A4'
+    });
+    await exit();
+    await browser.close();
+  })();
+});
+
+gulp.task('build', (cb) => {
   gulp.task('html')();
   gulp.task('css')();
   gulp.task('js')();
   gulp.task('images')();
-  gulp.task('copy')();
+  gulp.task('pdf')();
 
-  const stop = new Date();
-  console.log(`Finished after ${Math.round((stop - start) * 1000) / 1000} ms`);
   cb();
 });
