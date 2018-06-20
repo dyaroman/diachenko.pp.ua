@@ -150,6 +150,10 @@ dt {
   }
 
   a[href^="http"]:before {
+    content: 'http://';
+  }
+
+  a[href^="https"]:before {
     content: 'https://';
   }
 

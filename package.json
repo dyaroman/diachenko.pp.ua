@@ -23,6 +23,12 @@
     "dev": "gulp watch"
   },
   "author": "Roman Dyachenko <dyaroman@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dyaroman/cv.git"
+  },
+  "license": "UNLICENSED",
+  "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
