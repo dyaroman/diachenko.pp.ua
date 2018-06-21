@@ -55,6 +55,7 @@ gulp.task('pdf', () => {
     await page.goto(`http://localhost:8080`, {
       waitUntil: 'networkidle2'
     });
+    await page.emulateMedia('print');
     await page.pdf({
       path: './dest/cv.pdf',
       format: 'A4'
