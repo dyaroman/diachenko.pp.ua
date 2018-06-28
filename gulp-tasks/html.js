@@ -3,15 +3,15 @@ const nunjucks = require('gulp-nunjucks');
 const data = require('gulp-data');
 const notify = require('gulp-notify');
 const rename = require('gulp-rename');
+const htmlmin = require('gulp-htmlmin');
+const util = require('gulp-util');
+const config = require('./_config');
 
-/**
- * build '*.html' from '*.njk'
- * insert variables from 'options.js' to templates
- */
+
 const html = () => {
   return gulp.src([
-    `./src/html/**/*.njk`,
-    `!./src/html/**/_*.njk`
+      `./src/html/**/*.njk`,
+      `!./src/html/**/_*.njk`
     ])
     .pipe(data(() => {
       return require('../assets/options.js')
@@ -21,6 +21,14 @@ const html = () => {
     .pipe(rename({
       extname: ".html"
     }))
+    .pipe(config.production ? htmlmin({
+      collapseWhitespace: true,
+      collapseInlineTagWhitespace: true,
+      decodeEntities: true,
+      removeComments: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true
+    }) : util.noop())
     .pipe(gulp.dest(`./dest/`));
 };
 
@@ -30,4 +38,7 @@ const watcher = () => {
 };
 const htmlWatcher = gulp.series(html, watcher);
 
-module.exports = {html, htmlWatcher};
+module.exports = {
+  html,
+  htmlWatcher
+};
