@@ -25,7 +25,6 @@ gulp.task('js', () => {
 
 gulp.task('images', () => {
   console.log(`build images`);
-  imagesTask.favicons();
   return imagesTask.images();
 });
 
