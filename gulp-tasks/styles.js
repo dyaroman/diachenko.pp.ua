@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const util = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
-const sass = require('gulp-sass');
+const less = require('gulp-less');
 const notify = require('gulp-notify');
 const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
@@ -9,21 +9,19 @@ const csso = require('gulp-csso');
 const config = require('./_config');
 
 /**
- * build styles from '*.scss' to '*.css'
+ * build styles from '*.less' to '*.css'
  * sourcemaps only for dev env
  * autoprefixer
  * minification styles only for prod env
  */
 const styles = () => gulp.src([
-  `./src/scss/**/*.scss`,
-  `!./src/scss/**/_*.scss`
+  `./src/css/**/*.less`,
+  `!./src/css/**/_*.less`
   ])
   .pipe(config.production ? util.noop() : sourcemaps.init({
     loadMaps: true
   }))
-  .pipe(sass({
-    outputStyle: 'expanded'
-  }))
+  .pipe(less())
   .on('error', notify.onError())
   .pipe(autoprefixer({
     browsers: ['last 2 versions', 'ie 11'],
@@ -34,8 +32,8 @@ const styles = () => gulp.src([
   .pipe(gulp.dest(`./dest/css`));
 
 const watcher = () => {
-  console.log(`watch css in './src/scss/**/*.scss'`);
-  return gulp.watch(`./src/scss/**/*.scss`, styles);
+  console.log(`watch css in './src/css/**/*.less'`);
+  return gulp.watch(`./src/scss/**/*.less`, styles);
 };
 
 const cssWatcher = gulp.series(styles, watcher);
