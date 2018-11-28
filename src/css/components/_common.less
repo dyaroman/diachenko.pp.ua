@@ -169,6 +169,14 @@ dt {
     content: 'https://';
   }
 
+  a[href$=".com/"]:after {
+    content: '.com';
+  }
+
+  a[href$=".ru"]:after {
+    content: '.ru';
+  }
+
   .download {
     display: none;
   }
