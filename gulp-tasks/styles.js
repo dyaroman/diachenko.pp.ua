@@ -33,7 +33,7 @@ const styles = () => gulp.src([
 
 const watcher = () => {
   console.log(`watch css in './src/css/**/*.less'`);
-  return gulp.watch(`./src/scss/**/*.less`, styles);
+  return gulp.watch(`./src/css/**/*.less`, styles);
 };
 
 const cssWatcher = gulp.series(styles, watcher);
