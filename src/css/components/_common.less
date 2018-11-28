@@ -11,6 +11,10 @@ body {
   background-color: #ccc;
 }
 
+a:focus {
+  outline: 2px solid #19c953;
+}
+
 .resume {
   max-width: 960px;
   width: 100%;
@@ -77,6 +81,10 @@ dt {
   line-height: 50px;
   border-radius: 30px;
   background-color: rgb(25, 201, 83);
+
+  &:focus {
+    outline-color: currentColor;
+  }
 }
 
 @keyframes shake {
@@ -129,6 +137,10 @@ dt {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 }
 
