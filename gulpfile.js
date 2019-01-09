@@ -57,7 +57,8 @@ gulp.task('pdf', () => {
     await page.emulateMedia('print');
     await page.pdf({
       path: './dest/cv.pdf',
-      format: 'A4'
+      format: 'A4',
+      pageRanges: '1'
     });
     await exit();
     await browser.close();
