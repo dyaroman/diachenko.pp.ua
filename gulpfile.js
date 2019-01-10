@@ -1,3 +1,5 @@
+const options = require('./assets/options.js');
+
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const puppeteer = require('puppeteer');
@@ -56,7 +58,7 @@ gulp.task('pdf', () => {
     });
     await page.emulateMedia('print');
     await page.pdf({
-      path: './dest/cv.pdf',
+      path: `./dest/${options.fullName.replace(' ', '_')}.pdf`,
       format: 'A4',
       pageRanges: '1'
     });

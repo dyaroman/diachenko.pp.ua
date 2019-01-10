@@ -1,20 +1,20 @@
 {% extends "./components/_layout.njk" %}
 
-{% block title %}{{ person }}{% endblock %}
+{% block title %}{{ fullName }}{% endblock %}
 
 {% block page_name %}index{% endblock %}
 
 {% block content %}
   <div class="resume">
     <div class="img_holder">
-      <img src="./images/roman_diachenko.jpg" alt="Roman Diachenko" class="img">
+      <img src="./images/{{ fullName | lower | replace(" ", "_") }}.jpg" alt="{{ fullName }}" class="img">
     </div>
     <div class="container container--fio">
       <div class="col tar">
-        <h1 class="fio">Roman</h1>
+        <h1 class="fio">{{ firstName }}</h1>
       </div>
       <div class="col tal">
-        <h1 class="fio">Diachenko</h1>
+        <h1 class="fio">{{ lastName }}</h1>
       </div>
     </div>
     <div class="container">
