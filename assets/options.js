@@ -1,3 +1,3 @@
 module.exports = {
-  "person": "Roman Dyachenko"
+  "person": "Roman Diachenko"
 };

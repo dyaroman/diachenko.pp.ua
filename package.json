@@ -22,7 +22,7 @@
     "build:prod": "gulp build --production",
     "dev": "gulp watch"
   },
-  "author": "Roman Dyachenko <dyaroman@gmail.com>",
+  "author": "Roman Diachenko <dyaroman@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/dyaroman/cv.git"
