@@ -1,3 +1,5 @@
 module.exports = {
-  "person": "Roman Diachenko"
+  "fullName": "Roman Diachenko",
+  "firstName": "Roman",
+  "lastName": "Diachenko",
 };
