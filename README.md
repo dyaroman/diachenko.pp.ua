@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dyaroman/cv.svg?branch=master)](https://travis-ci.org/dyaroman/cv)
+
 ### Get started
 
 run `npm i` in root directory  
