@@ -4,7 +4,7 @@
 
 ### Get started
 
-run `npm i` in root directory  
+run `npm ci` in root directory  
 
 ### How to use
 
