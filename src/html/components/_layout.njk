@@ -8,13 +8,10 @@
 <div class="page_wrapper">
   {% include "./_header.njk" %}
 
-  <main class="content">
-    {% block content %}{% endblock %}
-  </main>
+  {% block content %}{% endblock %}
 
   {% include "./_footer.njk" %}
 </div>
-{% include "./_footerScripts.njk" %}
 {% block page_scripts %}{% endblock %}
 </body>
 </html>
