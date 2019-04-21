@@ -46,7 +46,7 @@ gulp.task('pdf', () => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.goto(`http://localhost:8080`, {
-      waitUntil: 'networkidle2'
+      waitUntil: 'networkidle0'
     });
     await page.emulateMedia('print');
     await page.pdf({
