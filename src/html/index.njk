@@ -9,18 +9,18 @@
     <div class="img_holder">
       <img src="./images/{{ fullName | lower | replace(" ", "_") }}.jpg" alt="{{ fullName }}" class="img">
     </div>
-    <div class="container container--full_name">
-      <div class="col tar">
-        <h1 class="full_name">{{ firstName }}</h1>
-      </div>
-      <div class="col tal">
-        <h2 class="full_name h1">{{ lastName }}</h2>
-      </div>
-    </div>
+    <h1 class="container container--full_name">
+      <span class="col tar">
+        {{ firstName }}
+      </span>
+      <span class="col tal">
+        {{ lastName }}
+      </span>
+    </h1>
     <div class="container">
       <div class="col tar">
         <div class="row">
-          <h3>Experience</h3>
+          <h2>Experience</h2>
           <ul class="experience">
             <li class="experience__item">
               <div class="experience__company">
@@ -47,9 +47,7 @@
             </li>
 
             <li class="experience__item">
-              <div class="experience__company">
-                <a href="https://pixwhite.ru" target="_blank" rel="noopener">PixWhite</a>
-              </div>
+              <div class="experience__company">PixWhite</div>
               <div class="experience__position">HTML-coder</div>
               <div class="experience__period">May 2015 - February 2016</div>
               <p class="experience__description">
@@ -62,7 +60,7 @@
       </div>
       <div class="col tal">
         <div class="row">
-          <h3>Contacts</h3>
+          <h2>Contacts</h2>
           <dl>
             <dt>Email</dt>
             <dd>
@@ -89,7 +87,7 @@
           </dl>
         </div>
         <div class="row">
-          <h3>Education</h3>
+          <h2>Education</h2>
           <dl>
             <dt>
               Dnipropetrovsk National University<br>
@@ -103,7 +101,7 @@
     <div class="container">
       <div class="col tar">
         <div class="row">
-          <h3>Skills</h3>
+          <h2>Skills</h2>
           <ul class="skills list">
             <li class="skills__item">English: Pre-Intermediate</li>
             <li class="skills__item">HTML: twig, nunjucks</li>
@@ -118,7 +116,7 @@
       </div>
       <div class="col tal">
         <div class="row">
-          <h3>Work examples</h3>
+          <h2>Work examples</h2>
           <ul class="work_examples list">
             <li class="work_examples__item">
               <a href="https://bad-credit-loans.co" target="_blank" rel="noopener" class="work_examples__link">
@@ -127,11 +125,15 @@
             </li>
 
             <li class="work_examples__item">
-              <a href="https://5watt.ua" target="_blank" rel="noopener" class="work_examples__link">5watt.ua</a>
+              <a href="https://5watt.ua" target="_blank" rel="noopener" class="work_examples__link">
+                5watt.ua
+              </a>
             </li>
 
             <li class="work_examples__item">
-              <a href="http://edem.ua" target="_blank" rel="noopener" class="work_examples__link">edem.ua</a>
+              <a href="http://edem.ua" target="_blank" rel="noopener" class="work_examples__link">
+                edem.ua
+              </a>
             </li>
           </ul>
         </div>

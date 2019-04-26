@@ -15,16 +15,24 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+
   background-color: #ccc;
 }
 
 .page_wrapper {
   flex: 1 1 auto;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   min-height: 100vh;
   justify-content: center;
+
+  padding: 30px;
+
+  @media (max-width: 719px) {
+    padding: 10px;
+  }
 }
 
 .resume {
@@ -34,7 +42,11 @@ body {
   padding: 30px 15px;
   margin-left: auto;
   margin-right: auto;
+
+  hyphens: auto;
+
   background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .row {
@@ -92,7 +104,7 @@ dd:not(:last-of-type) {
   font-size: 14px;
   line-height: 50px;
   border-radius: 30px;
-  background-color: rgb(25, 201, 83);
+  background-color: #19c953;
 
   &:focus {
     outline-color: currentColor;
@@ -100,7 +112,6 @@ dd:not(:last-of-type) {
 }
 
 @keyframes shake {
-
   10%,
   90% {
     transform: translate3d(-1px, 0, 0);
@@ -230,6 +241,9 @@ dd:not(:last-of-type) {
 }
 
 @media print {
+  .page_wrapper {
+    padding: 0;
+  }
   .resume {
     width: 21cm;
     height: 29.68cm;
@@ -238,12 +252,17 @@ dd:not(:last-of-type) {
     -webkit-print-color-adjust: exact;
     page-break-after: auto;
     overflow: hidden;
+    box-shadow: none;
   }
 
   .list {
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+
+  a {
+    display: inline-flex;
   }
 
   a[href^="http"]:before {
@@ -256,10 +275,6 @@ dd:not(:last-of-type) {
 
   a[href$=".com/"]:after {
     content: '.com';
-  }
-
-  a[href$=".ru"]:after {
-    content: '.ru';
   }
 
   .download {
