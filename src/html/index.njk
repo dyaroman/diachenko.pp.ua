@@ -9,14 +9,14 @@
     <div class="img_holder">
       <img src="./images/{{ fullName | lower | replace(" ", "_") }}.jpg" alt="{{ fullName }}" class="img">
     </div>
-    <div class="container container--full_name">
-      <div class="col tar">
-        <h1 class="full_name">{{ firstName }}</h1>
-      </div>
-      <div class="col tal">
-        <h2 class="full_name h1">{{ lastName }}</h2>
-      </div>
-    </div>
+    <h1 class="container container--full_name">
+      <span class="col tar">
+        {{ firstName }}
+      </span>
+      <span class="col tal">
+        {{ lastName }}
+      </span>
+    </h1>
     <div class="container">
       <div class="col tar">
         <div class="row">
