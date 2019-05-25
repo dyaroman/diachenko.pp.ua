@@ -1,6 +1,6 @@
 # [dyaroman.com](https://dyaroman.com)
 
-[![Build Status](https://travis-ci.org/dyaroman/cv.svg?branch=master)](https://travis-ci.org/dyaroman/cv)
+[![Build Status](https://travis-ci.org/dyaroman/dyaroman.com.svg?branch=master)](https://travis-ci.org/dyaroman/dyaroman.com)
 
 ### Get started
 
