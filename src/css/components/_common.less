@@ -9,6 +9,10 @@ html {
 
 a:focus {
   outline: 2px solid @primary-color;
+
+  @supports(--color: green) {
+    outline-color: var(--rd-primary-color, @primary-color);
+  }
 }
 
 body {
@@ -18,6 +22,10 @@ body {
   min-width: 320px;
 
   background-color: @body-bg;
+
+  @supports(--color: green) {
+    background-color: var(--rd-body-bg, @body-bg);
+  }
 }
 
 .page_wrapper {
@@ -48,6 +56,10 @@ body {
 
   background-color: @resume-bg;
   box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+  @supports(--color: green) {
+    background-color: var(--rd-resume-bg, @resume-bg);
+  }
 }
 
 .row {
@@ -107,8 +119,8 @@ dd:not(:last-of-type) {
   border-radius: 30px;
   background-color: @primary-color;
 
-  &:focus {
-    outline-color: currentColor;
+  @supports(--color: green) {
+    background-color: var(--rd-primary-color, @primary-color);
   }
 }
 
@@ -168,6 +180,10 @@ dd:not(:last-of-type) {
         margin-left: -2px;
         border-radius: 50%;
         background-color: @text-color;
+
+        @supports(--color: green) {
+          background-color: var(--rd-text-color, @text-color);
+        }
       }
     }
   }
@@ -190,6 +206,10 @@ dd:not(:last-of-type) {
         margin-right: -2px;
         border-radius: 50%;
         background-color: @text-color;
+
+        @supports(--color: green) {
+          background-color: var(--rd-text-color, @text-color);
+        }
       }
     }
   }
@@ -235,6 +255,10 @@ dd:not(:last-of-type) {
         margin-left: -2px;
         border-radius: 50%;
         background-color: @text-color;
+
+        @supports(--color: green) {
+          background-color: var(--rd-text-color, @text-color);
+        }
       }
     }
 
