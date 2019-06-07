@@ -8,7 +8,7 @@ html {
 }
 
 a:focus {
-  outline: 2px solid #19c953;
+  outline: 2px solid @primary-color;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   flex-wrap: nowrap;
   min-width: 320px;
 
-  background-color: #ccc;
+  background-color: @body-bg;
 }
 
 .page_wrapper {
@@ -46,7 +46,7 @@ body {
 
   hyphens: auto;
 
-  background-color: #fff;
+  background-color: @resume-bg;
   box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
@@ -105,7 +105,7 @@ dd:not(:last-of-type) {
   font-size: 14px;
   line-height: 50px;
   border-radius: 30px;
-  background-color: #19c953;
+  background-color: @primary-color;
 
   &:focus {
     outline-color: currentColor;
@@ -167,7 +167,7 @@ dd:not(:last-of-type) {
         margin-top: -2px;
         margin-left: -2px;
         border-radius: 50%;
-        background-color: #000;
+        background-color: @text-color;
       }
     }
   }
@@ -189,7 +189,7 @@ dd:not(:last-of-type) {
         margin-top: -2px;
         margin-right: -2px;
         border-radius: 50%;
-        background-color: #000;
+        background-color: @text-color;
       }
     }
   }
@@ -234,7 +234,7 @@ dd:not(:last-of-type) {
         margin-top: -2px;
         margin-left: -2px;
         border-radius: 50%;
-        background-color: #000;
+        background-color: @text-color;
       }
     }
 
