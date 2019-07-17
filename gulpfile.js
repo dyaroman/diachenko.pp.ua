@@ -6,6 +6,7 @@ const puppeteer = require('puppeteer');
 
 const htmlTask = require('./gulp-tasks/html');
 const stylesTask = require('./gulp-tasks/styles');
+const jsTask = require('./gulp-tasks/scripts');
 const imagesTask = require('./gulp-tasks/images');
 
 gulp.task('html', () => {
@@ -16,6 +17,12 @@ gulp.task('html', () => {
 gulp.task('css', () => {
   console.log(`build css`);
   return stylesTask.styles();
+});
+
+gulp.task('js', () => {
+  console.log(`build js`);
+  jsTask.jsLibs();
+  return jsTask.scripts();
 });
 
 gulp.task('images', () => {
@@ -33,6 +40,7 @@ gulp.task('server', () => {
 gulp.task('watch', () => {
   htmlTask.htmlWatcher();
   stylesTask.cssWatcher();
+  jsTask.jsWatcher();
   imagesTask.imagesWatcher();
   gulp.task('server')();
 });
@@ -67,6 +75,7 @@ gulp.task('copy', () => {
 gulp.task('build', (cb) => {
   gulp.task('html')();
   gulp.task('css')();
+  gulp.task('js')();
   gulp.task('images')();
   gulp.task('pdf')();
   gulp.task('copy')();

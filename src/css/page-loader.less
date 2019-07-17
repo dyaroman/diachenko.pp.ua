@@ -1,0 +1,23 @@
+@import "./components/_var";
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+
+  display: block;
+  width: 0;
+  height: 4px;
+
+  background-color: @primary-color;
+
+  transition: 0.5s;
+
+  pointer-events: none;
+  user-select: none;
+
+  @supports(--color: green) {
+    background-color: var(--rd-primary-color, @primary-color);
+  }
+}
