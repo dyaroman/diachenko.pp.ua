@@ -42,6 +42,7 @@ gulp.task('watch', () => {
   stylesTask.cssWatcher();
   jsTask.jsWatcher();
   imagesTask.imagesWatcher();
+  gulp.task('copy')();
   gulp.task('server')();
 });
 
