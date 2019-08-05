@@ -119,11 +119,7 @@ dd:not(:last-of-type) {
   border-radius: 30px;
   background-color: @primary-color;
   color: @text-color;
-  animation: pulse-dark 2s infinite;
-
-  @media (prefers-color-scheme: dark) {
-    animation: pulse-light 2s infinite;
-  }
+  animation: pulse 2s infinite;
 
   &:hover {
     animation: none;
@@ -134,18 +130,11 @@ dd:not(:last-of-type) {
   }
 }
 
-@keyframes pulse-dark {
+@keyframes pulse {
   50% {
     box-shadow: 0 0 0 5px rgba(#000, 0.2);
   }
 }
-
-@keyframes pulse-light {
-  50% {
-    box-shadow: 0 0 0 5px rgba(#fff, 0.2);
-  }
-}
-
 
 @media print,
 (min-width: 720px) {
