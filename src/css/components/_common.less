@@ -10,7 +10,7 @@ html {
 a:focus {
   outline: 2px solid @primary-color;
 
-  @supports(--color: green) {
+  @supports (--color: green) {
     outline-color: var(--rd-primary-color, @primary-color);
   }
 }
@@ -23,7 +23,7 @@ body {
 
   background-color: @body-bg;
 
-  @supports(--color: green) {
+  @supports (--color: green) {
     background-color: var(--rd-body-bg, @body-bg);
   }
 }
@@ -57,7 +57,7 @@ body {
   background-color: @resume-bg;
   box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
-  @supports(--color: green) {
+  @supports (--color: green) {
     background-color: var(--rd-resume-bg, @resume-bg);
   }
 }
@@ -119,35 +119,33 @@ dd:not(:last-of-type) {
   border-radius: 30px;
   background-color: @primary-color;
   color: @text-color;
+  animation: pulse-dark 2s infinite;
 
-  @supports(--color: green) {
+  @media (prefers-color-scheme: dark) {
+    animation: pulse-light 2s infinite;
+  }
+
+  &:hover {
+    animation: none;
+  }
+
+  @supports (--color: green) {
     background-color: var(--rd-primary-color, @primary-color);
   }
 }
 
-@keyframes shake {
-
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
+@keyframes pulse-dark {
+  50% {
+    box-shadow: 0 0 0 5px rgba(#000, 0.2);
   }
 }
+
+@keyframes pulse-light {
+  50% {
+    box-shadow: 0 0 0 5px rgba(#fff, 0.2);
+  }
+}
+
 
 @media print,
 (min-width: 720px) {
@@ -183,7 +181,7 @@ dd:not(:last-of-type) {
         border-radius: 50%;
         background-color: @text-color;
 
-        @supports(--color: green) {
+        @supports (--color: green) {
           background-color: var(--rd-text-color, @text-color);
         }
       }
@@ -209,7 +207,7 @@ dd:not(:last-of-type) {
         border-radius: 50%;
         background-color: @text-color;
 
-        @supports(--color: green) {
+        @supports (--color: green) {
           background-color: var(--rd-text-color, @text-color);
         }
       }
@@ -220,13 +218,6 @@ dd:not(:last-of-type) {
 @media (min-width: 720px) {
   .download:before {
     content: 'download ';
-  }
-
-  .download:hover {
-    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
   }
 
   a:hover {
@@ -258,7 +249,7 @@ dd:not(:last-of-type) {
         border-radius: 50%;
         background-color: @text-color;
 
-        @supports(--color: green) {
+        @supports (--color: green) {
           background-color: var(--rd-text-color, @text-color);
         }
       }
