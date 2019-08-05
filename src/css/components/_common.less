@@ -118,6 +118,7 @@ dd:not(:last-of-type) {
   line-height: 50px;
   border-radius: 30px;
   background-color: @primary-color;
+  color: @text-color;
 
   @supports(--color: green) {
     background-color: var(--rd-primary-color, @primary-color);
@@ -125,6 +126,7 @@ dd:not(:last-of-type) {
 }
 
 @keyframes shake {
+
   10%,
   90% {
     transform: translate3d(-1px, 0, 0);
@@ -269,6 +271,7 @@ dd:not(:last-of-type) {
   .page_wrapper {
     padding: 0;
   }
+
   .resume {
     width: 21cm;
     height: 29.68cm;
