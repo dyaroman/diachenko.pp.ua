@@ -55,7 +55,7 @@ body {
   hyphens: auto;
 
   background-color: @resume-bg;
-  box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
 
   @supports (--color: green) {
     background-color: var(--rd-resume-bg, @resume-bg);
@@ -137,7 +137,7 @@ dd:not(:last-of-type) {
 }
 
 @media print,
-(min-width: 720px) {
+(min-width: @mobile) {
   .container {
     display: flex;
     justify-content: space-between;
@@ -214,7 +214,7 @@ dd:not(:last-of-type) {
   }
 }
 
-@media (max-width: 719px) {
+@media (max-width: @mobile - 1) {
   .container--full_name {
     text-align: center;
   }
