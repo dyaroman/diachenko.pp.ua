@@ -2,8 +2,8 @@
   "name": "Roman Diachenko",
   "short_name": "RD",
   "prefer_related_applications": false,
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#ccc",
+  "background_color": "#ccc",
   "start_url": "./",
   "display": "standalone",
   "icons": [
