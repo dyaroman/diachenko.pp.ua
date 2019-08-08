@@ -1,6 +1,7 @@
 const CACHE = "precache";
 const precacheFiles = [
-  '/**'
+  '/',
+  '/Roman_Diachenko.pdf'
 ];
 
 self.addEventListener("install", function (event) {
