@@ -11,7 +11,7 @@
   "scripts": {
     "build": "gulp build",
     "build:prod": "gulp build --production",
-    "dev": "gulp watch"
+    "start": "gulp watch"
   },
   "author": "Roman Diachenko <dyaroman@gmail.com>",
   "repository": {

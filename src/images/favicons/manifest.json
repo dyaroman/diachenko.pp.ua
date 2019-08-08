@@ -1,6 +1,10 @@
 {
   "name": "Roman Diachenko",
     "short_name": "RD",
+    "theme_color": "#ccc",
+    "background_color": "#ccc",
+    "start_url": "./",
+    "display": "standalone",
     "icons": [
         {
             "src": "/images/favicons/android-chrome-192x192.png",
@@ -12,9 +16,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#ccc",
-    "background_color": "#ccc",
-    "start_url": "https://dyaroman.com",
-    "display": "standalone"
+    ]
 }

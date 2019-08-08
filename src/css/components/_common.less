@@ -119,10 +119,11 @@ dd:not(:last-of-type) {
   border-radius: 30px;
   background-color: @primary-color;
   color: @text-color;
-  animation: pulse 2s infinite;
 
-  &:hover {
-    animation: none;
+  @media (any-hover: hover) {
+    &:hover {
+      animation: pulse 2s infinite;
+    }
   }
 
   @supports (--color: green) {
