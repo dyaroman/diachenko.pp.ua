@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!--Excelsior!-->
-  <title>{% block title %} {{ siteName }} {% endblock %}</title>
-  {% include "./_head.njk" %}
+    <!--Excelsior!-->
+    <title>{% block title %} {{ siteName }} {% endblock %}</title>
+    {% include "./_head.njk" %}
 </head>
 <body class="page_{% block page_name %}{% endblock %}">
 <div class="page_wrapper">
-  {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 
-  {% include "./_footer.njk" %}
+    {% include "./_footer.njk" %}
 </div>
 {% block page_scripts %}{% endblock %}
 </body>

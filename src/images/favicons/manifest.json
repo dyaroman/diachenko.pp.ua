@@ -1,21 +1,21 @@
 {
   "name": "Roman Diachenko",
-  "short_name": "RD",
-  "prefer_related_applications": false,
-  "theme_color": "#ccc",
-  "background_color": "#ccc",
-  "start_url": "./",
-  "display": "standalone",
-  "icons": [
-    {
-      "src": "/images/favicons/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicons/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+    "short_name": "RD",
+    "prefer_related_applications": false,
+    "theme_color": "#ccc",
+    "background_color": "#ccc",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/images/favicons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/favicons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }
