@@ -6,18 +6,18 @@
 @resume-bg-dark: #333;
 
 :root {
-  --rd-primary-color: @primary-color;
-  --rd-text-color: @text-color;
-  --rd-body-bg: @body-bg;
-  --rd-resume-bg: @resume-bg;
-
-  @media (prefers-color-scheme: dark) {
-    --rd-text-color: @text-color-light;
-    --rd-resume-bg: @resume-bg-dark;
-  }
-
-  @media print {
+    --rd-primary-color: @primary-color;
     --rd-text-color: @text-color;
+    --rd-body-bg: @body-bg;
     --rd-resume-bg: @resume-bg;
-  }
+
+    @media (prefers-color-scheme: dark) {
+        --rd-text-color: @text-color-light;
+        --rd-resume-bg: @resume-bg-dark;
+    }
+
+    @media print {
+        --rd-text-color: @text-color;
+        --rd-resume-bg: @resume-bg;
+    }
 }
