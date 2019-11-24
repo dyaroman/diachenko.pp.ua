@@ -138,7 +138,7 @@ dd:not(:last-of-type) {
 }
 
 @media print,
-(min-width: 720px) {
+(min-width: @mobile) {
     .container {
         display: flex;
         justify-content: space-between;
@@ -215,7 +215,7 @@ dd:not(:last-of-type) {
     }
 }
 
-@media (max-width: 719px) {
+@media (max-width: @mobile - 1) {
     .container--full_name {
         text-align: center;
     }
