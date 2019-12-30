@@ -1,22 +1,23 @@
 {% extends "./components/_layout.njk" %}
 
-{% block title %}{{ fullName }}{% endblock %}
+{% block title %}{{ fullName }}
+{% endblock %}
 
 {% block page_name %}index{% endblock %}
 
 {% block content %}
     <div class="resume">
         <div class="img_holder">
-            <img src="./images/{{ fullName | lower | replace(" ", "_") }}.jpg" alt="{{ fullName }}" class="img">
+            <img src="./images/{{ fullName | lower | replace(' ', '_') }}.jpg" alt="{{ fullName }}" class="img">
         </div>
         <h1 class="container container--full_name">
-      <span class="col tar">
-        {{ firstName }}
-      </span>
+            <span class="col tar">
+                {{ firstName }}
+            </span>
             <br>
             <span class="col tal">
-        {{ lastName }}
-      </span>
+                {{ lastName }}
+            </span>
         </h1>
         <div class="container">
             <div class="col tar">
@@ -62,6 +63,20 @@
             </div>
             <div class="col tal">
                 <div class="row">
+                    <h2>Skills</h2>
+                    <ul class="skills list">
+                        <li class="skills__item">English: Intermediate</li>
+                        <li class="skills__item">HTML: twig, nunjucks</li>
+                        <li class="skills__item">CSS: scss, less</li>
+                        <li class="skills__item">JS: strong junior</li>
+                        <li class="skills__item">Task runner: Gulp</li>
+                        <li class="skills__item">Bundler: Parcel, Webpack</li>
+                        <li class="skills__item">VCS: Git</li>
+                        <li class="skills__item">Repositories: GitHub, GitLab, Bitbucket</li>
+                        <li class="skills__item">Design: Figma, InVision, Zeplin, PhotoShop</li>
+                    </ul>
+                </div>
+                <div class="row">
                     <h2>Contacts</h2>
                     <dl>
                         <dt>Email</dt>
@@ -87,36 +102,6 @@
                         <dt>City of residence</dt>
                         <dd>Kamianske</dd>
                     </dl>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="col tar">
-            <div class="row">
-                <h2>Education</h2>
-                <dl>
-                    <dt>
-                        Dnipropetrovsk National University<br>
-                        of Railway Transport
-                    </dt>
-                    <dd>Automation, remote control and communication.</dd>
-                </dl>
-            </div>
-            </div>
-            <div class="col tal">
-                <div class="row">
-                    <h2>Skills</h2>
-                    <ul class="skills list">
-                        <li class="skills__item">English: Intermediate</li>
-                        <li class="skills__item">HTML: twig, nunjucks</li>
-                        <li class="skills__item">CSS: scss, less</li>
-                        <li class="skills__item">JS: strong junior</li>
-                        <li class="skills__item">Task runner: Gulp</li>
-                        <li class="skills__item">Bundler: Webpack</li>
-                        <li class="skills__item">VCS: Git</li>
-                        <li class="skills__item">Repositories: GitHub, GitLab, Bitbucket</li>
-                        <li class="skills__item">Design: Figma, InVision, Zeplin, PhotoShop</li>
-                    </ul>
                 </div>
             </div>
         </div>
