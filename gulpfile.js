@@ -33,7 +33,7 @@ gulp.task('images', () => {
 gulp.task('server', () => {
     connect.server({
         root: `./dest/`,
-        livereload: false
+        livereload: false,
     });
 });
 
@@ -42,6 +42,7 @@ gulp.task('watch', () => {
     stylesTask.cssWatcher();
     jsTask.jsWatcher();
     imagesTask.imagesWatcher();
+    gulp.task('copy')();
     gulp.task('server')();
 });
 
@@ -54,13 +55,13 @@ gulp.task('pdf', () => {
         const browser = await puppeteer.launch({args: ['--no-sandbox']});
         const page = await browser.newPage();
         await page.goto(`http://localhost:8080`, {
-            waitUntil: 'networkidle0'
+            waitUntil: 'networkidle0',
         });
         await page.emulateMedia('print');
         await page.pdf({
             path: `./dest/${options.fullName.replace(' ', '_')}.pdf`,
             format: 'A4',
-            pageRanges: '1'
+            pageRanges: '1',
         });
         await exit();
         await browser.close();
@@ -68,8 +69,7 @@ gulp.task('pdf', () => {
 });
 
 gulp.task('copy', () => {
-    return gulp.src('./src/copyInRoot/**/*')
-        .pipe(gulp.dest('./dest/'));
+    return gulp.src('./src/copyInRoot/**/*').pipe(gulp.dest('./dest/'));
 });
 
 gulp.task('build', (cb) => {
