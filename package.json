@@ -39,15 +39,5 @@
         "gulp-uglify": "^3.0.0",
         "gulp-util": "^3.0.8",
         "puppeteer": "^1.10.0"
-    },
-    "devDependencies": {
-        "husky": "^3.0.9",
-        "prettier": "1.19.1",
-        "pretty-quick": "^2.0.1"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged"
-        }
     }
 }
