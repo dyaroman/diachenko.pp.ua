@@ -5,15 +5,15 @@ root = true
 indent_style = space
 indent_size = 4
 
-[*.{json,travis.yml}]
-indent_style = space
-indent_size = 2
-
 # we recommend you to keep these unchanged
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+
+[*.{json,travis.yml}]
+indent_style = space
+indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false

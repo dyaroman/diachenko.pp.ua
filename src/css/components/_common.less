@@ -137,8 +137,7 @@ dd:not(:last-of-type) {
     }
 }
 
-@media print,
-(min-width: @mobile) {
+@media print, (min-width: @mobile) {
     .container {
         display: flex;
         justify-content: space-between;
@@ -244,7 +243,6 @@ dd:not(:last-of-type) {
                 }
             }
         }
-
     }
 }
 
@@ -274,15 +272,15 @@ dd:not(:last-of-type) {
         display: inline-flex;
     }
 
-    a[href^="http"]:before {
+    a[href^='http']:before {
         content: 'http://';
     }
 
-    a[href^="https"]:before {
+    a[href^='https']:before {
         content: 'https://';
     }
 
-    a[href$=".com/"]:after {
+    a[href$='.com/']:after {
         content: '.com';
     }
 

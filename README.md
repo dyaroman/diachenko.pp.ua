@@ -10,4 +10,4 @@ run `npm ci` in root directory
 
 `npm run build` - build all templates from `./src/` and put them to `./dest/`  
 `npm run build:prod` - build all templates, optimize `css` and `js` for production  
-`npm run dev` - build template and watch changes, also run dev server on `localhost:8080`  
+`npm start` - build template and watch changes, also run dev server on `localhost:8080`  
