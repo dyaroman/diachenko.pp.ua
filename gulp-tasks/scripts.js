@@ -34,9 +34,10 @@ const scripts = () => gulp.src([
 const jsLibs = () => gulp.src(`./src/js/libs/**/*.js`)
     .pipe(gulp.dest(`./dest/js/libs/`));
 
-const watcher = () => {
+const watcher = (cb) => {
     console.log(`watch js in './src/js/**/*.js'`);
-    return gulp.watch(`./src/js/**/*.js`, scripts);
+    gulp.watch(`./src/js/**/*.js`, scripts);
+    return cb();
 };
 
 const jsWatcher = gulp.series(scripts, jsLibs, watcher);

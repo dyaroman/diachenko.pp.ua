@@ -10,11 +10,8 @@
         {% include "./_head.njk" %}
     </head>
     <body class="page_{% block page_name %}{% endblock %}">
-        <div class="page_wrapper">
-            {% block content %}{% endblock %}
-
-            {% include "./_footer.njk" %}
-        </div>
+        {% block content %}{% endblock %}
+        {% include "./_footer.njk" %}
         {% block page_scripts %}{% endblock %}
     </body>
 </html>
