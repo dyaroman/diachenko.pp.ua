@@ -36,10 +36,6 @@ body {
 h1,
 h2 {
     text-align: center;
-}
-
-h2 {
-
     @media print,
     (min-width: @mobile) {
         text-align: left;
@@ -87,6 +83,11 @@ h2 {
     margin-right: auto;
 
     border-radius: 50%;
+
+    @media print,
+    (min-width: @mobile) {
+        margin: 0;
+    }
 }
 
 .download {
