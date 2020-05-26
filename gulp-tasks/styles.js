@@ -31,11 +31,12 @@ const styles = () => gulp.src([
     .pipe(config.production ? csso() : util.noop())
     .pipe(gulp.dest(`./dest/css`));
 
-const watcher = () => {
+const watcher = (cb) => {
     console.log(`watch css in './src/css/**/*.less'`);
-    return gulp.watch(`./src/css/**/*.less`, styles);
+    gulp.watch(`./src/css/**/*.less`, styles);
+    return cb();
 };
 
 const cssWatcher = gulp.series(styles, watcher);
 
-module.exports = {styles, cssWatcher};
+module.exports = { styles, cssWatcher };

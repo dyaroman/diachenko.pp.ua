@@ -8,104 +8,136 @@
 
 {% block content %}
     <div class="resume">
-        <div class="img_holder">
-            <img src="./images/{{ fullName | lower | replace(' ', '_') }}.jpg" alt="{{ fullName }}" class="img">
-        </div>
-        <h1 class="container container--full_name">
-            <span class="col tar">
+        <section>
+            <img width="250" height="250" src="./images/{{ fullName | lower | replace(' ', '_') }}.jpg" alt="{{ fullName }}" class="img">
+
+            <h1 class="tac">
                 {{ firstName }}
-            </span>
-            <br>
-            <span class="col tal">
                 {{ lastName }}
-            </span>
-        </h1>
-        <div class="container">
-            <div class="col tar">
-                <div class="row">
-                    <h2>Experience</h2>
-                    <ul class="experience">
-                        <li class="experience__item">
-                            <div class="experience__company">
-                                <a href="https://leadsmarket.com/" target="_blank" rel="noopener">LeadsMarket</a>
-                            </div>
-                            <div class="experience__position">Front-end developer</div>
-                            <div class="experience__period">September 2017</div>
-                            <p class="experience__description">
-                                ASP.NET MVC websites support.<br>
-                                Development of new ones.<br>
-                                Work with Angular applications.
-                            </p>
-                        </li>
+            </h1>
+        </section>
 
-                        <li class="experience__item">
-                            <div class="experience__company">
-                                <a href="http://forforce.com/" target="_blank" rel="noopener">Forforce</a>
-                            </div>
-                            <div class="experience__position">HTML-coder</div>
-                            <div class="experience__period">March 2016 — August 2017</div>
-                            <p class="experience__description">
-                                Development and support of websites.<br>
-                                Work with PrestaShop.
-                            </p>
-                        </li>
+        <section>
+            <h2>Contacts</h2>
+            <dl>
+                <dt>Email</dt>
+                <dd>
+                    <a href="mailto:dyaroman@gmail.com" target="_blank">
+                        dyaroman@gmail.com
+                    </a>
+                </dd>
+                <dt>Telegram</dt>
+                <dd>
+                    <a href="https://t.me/dyaroman" target="_blank">
+                        t.me/dyaroman
+                    </a>
+                </dd>
+                <dt>GitHub</dt>
+                <dd>
+                    <a href="https://github.com/dyaroman" target="_blank" rel="noopener">
+                        github.com/{{ username }}
+                    </a>
+                </dd>
+                <dt>LinkedIn</dt>
+                <dd>
+                    <a href="https://linkedin.com/in/dyaroman" target="_blank" rel="noopener">
+                        linkedin.com/in/{{ username }}
+                    </a>
+                </dd>
+                <dt>City of residence</dt>
+                <dd>Kamianske</dd>
+            </dl>
+        </section>
 
-                        <li class="experience__item">
-                            <div class="experience__company">PixWhite</div>
-                            <div class="experience__position">HTML-coder</div>
-                            <div class="experience__period">May 2015 — February 2016</div>
-                            <p class="experience__description">
-                                Adaptive, cross-browser<br>
-                                development of websites.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col tal">
-                <div class="row">
-                    <h2>Skills</h2>
-                    <ul class="skills list">
-                        <li class="skills__item">English: Intermediate</li>
-                        <li class="skills__item">HTML: twig, nunjucks</li>
-                        <li class="skills__item">CSS: scss, less</li>
-                        <li class="skills__item">JS: strong junior</li>
-                        <li class="skills__item">Task runner: Gulp</li>
-                        <li class="skills__item">Bundler: Parcel, Webpack</li>
-                        <li class="skills__item">VCS: Git</li>
-                        <li class="skills__item">Repositories: GitHub, GitLab, Bitbucket</li>
-                        <li class="skills__item">Design: Figma, InVision, Zeplin, PhotoShop</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h2>Contacts</h2>
-                    <dl>
-                        <dt>Email</dt>
-                        <dd>
-                            <a href="mailto:dyaroman@gmail.com" target="_blank">dyaroman@gmail.com</a>
-                        </dd>
-                        <dt>Telegram</dt>
-                        <dd>
-                            <a href="https://t.me/dyaroman" target="_blank">t.me/dyaroman</a>
-                        </dd>
-                        <dt>GitHub</dt>
-                        <dd>
-                            <a href="https://github.com/dyaroman" target="_blank" rel="noopener">
-                                github.com/{{ username }}
-                            </a>
-                        </dd>
-                        <dt>LinkedIn</dt>
-                        <dd>
-                            <a href="https://linkedin.com/in/dyaroman" target="_blank" rel="noopener">
-                                linkedin.com/in/{{ username }}
-                            </a>
-                        </dd>
-                        <dt>City of residence</dt>
-                        <dd>Kamianske</dd>
-                    </dl>
-                </div>
-            </div>
-        </div>
+        <section>
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <strong>
+                        <a href="https://leadsmarket.com/" target="_blank" rel="noopener">
+                            LeadsMarket
+                        </a>
+                    </strong>
+                    <br>
+                    Frontend developer
+                    <br>
+                    <em>September 2017</em>
+                    <p>
+                        ASP.NET MVC websites support.<br>
+                        Development of new ones.<br>
+                        Work with Angular applications.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>
+                        <a href="http://forforce.com/" target="_blank" rel="noopener">
+                            Forforce
+                        </a>
+                    </strong>
+                    <br>
+                    HTML-coder
+                    <br>
+                    <em>March 2016 — August 2017</em>
+                    <p>
+                        Development and support of websites.<br>
+                        Work with PrestaShop.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>PixWhite</strong>
+                    <br>
+                    HTML-coder
+                    <br>
+                    <em>May 2015 — February 2016</em>
+                    <p>
+                        Adaptive, cross-browser<br>
+                        development of websites.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <dl>
+                <dt>English</dt>
+                <dd>Intermediate</dd>
+
+                <dt>HTML template engines</dt>
+                <dd>twig</dd>
+                <dd>nunjucks</dd>
+
+                <dt>CSS preprocessors</dt>
+                <dd>scss</dd>
+                <dd>less</dd>
+
+                <dt>JS</dt>
+                <dd>strong junior</dd>
+
+                <dt>Framework</dt>
+                <dd>Angular (basic)</dd>
+
+                <dt>Backend</dt>
+                <dd>NodeJS (Express)</dd>
+
+                <dt>Database</dt>
+                <dd>MongoDB (Mongoose)</dd>
+
+                <dt>Task runner</dt>
+                <dd>Gulp</dd>
+
+                <dt>Bundler</dt>
+                <dd>Parcel</dd>
+                <dd>Webpack</dd>
+
+                <dt>Other</dd>
+                <dd>Docker</dd>
+                <dd>PWA</dd>
+                <dd>Puppeteer</dd>
+            </dl>
+        </section>
     </div>
 {% endblock %}
 

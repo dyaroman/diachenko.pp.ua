@@ -8,33 +8,33 @@ const util = require('gulp-util');
 const config = require('./_config');
 
 
-const html = () => {
-    return gulp.src([
-        `./src/html/**/*.njk`,
-        `!./src/html/**/_*.njk`
-    ])
-        .pipe(data(() => {
-            return require('../assets/options.js')
-        }))
-        .pipe(nunjucks.compile())
-        .on('error', notify.onError())
-        .pipe(rename({
-            extname: ".html"
-        }))
-        .pipe(config.production ? htmlmin({
-            collapseWhitespace: true,
-            collapseInlineTagWhitespace: true,
-            decodeEntities: true,
-            removeComments: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true
-        }) : util.noop())
-        .pipe(gulp.dest(`./dest/`));
-};
+const html = () => gulp.src([
+    `./src/html/**/*.njk`,
+    `!./src/html/**/_*.njk`
+])
+    .pipe(data(() => {
+        return require('../assets/options.js')
+    }))
+    .pipe(nunjucks.compile())
+    .on('error', notify.onError())
+    .pipe(rename({
+        extname: ".html"
+    }))
+    .pipe(config.production ? htmlmin({
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        decodeEntities: true,
+        removeComments: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
+    }) : util.noop())
+    .pipe(gulp.dest(`./dest/`));
+;
 
-const watcher = () => {
+const watcher = (cb) => {
     console.log(`watch html in './src/html/**/*.njk'`);
-    return gulp.watch(`./src/html/**/*.njk`, html);
+    gulp.watch(`./src/html/**/*.njk`, html);
+    return cb();
 };
 const htmlWatcher = gulp.series(html, watcher);
 
