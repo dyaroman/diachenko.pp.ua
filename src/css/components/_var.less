@@ -1,4 +1,5 @@
 @mobile: 720px;
+@gap: 15px;
 
 @primary-color: #19c953;
 @text-color: #333;
@@ -8,6 +9,7 @@
 @resume-bg-dark: #333;
 
 :root {
+    --rd-gap: 5px;
     --rd-primary-color: @primary-color;
     --rd-text-color: @text-color;
     --rd-body-bg: @body-bg;
@@ -21,5 +23,9 @@
     @media print {
         --rd-text-color: @text-color;
         --rd-resume-bg: @resume-bg;
+    }
+
+    @media (min-width: @mobile) {
+        --rd-gap: @gap;
     }
 }

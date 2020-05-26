@@ -37,13 +37,14 @@ gulp.task('server', () => {
     });
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', (cb) => {
     htmlTask.htmlWatcher();
     stylesTask.cssWatcher();
     jsTask.jsWatcher();
     imagesTask.imagesWatcher();
     gulp.task('copy')();
     gulp.task('server')();
+    return cb();
 });
 
 gulp.task('pdf', () => {
@@ -61,7 +62,12 @@ gulp.task('pdf', () => {
         await page.pdf({
             path: `./dest/${options.fullName.replace(' ', '_')}.pdf`,
             format: 'A4',
-            pageRanges: '1',
+            margin: {
+                top: '5mm',
+                right: '5mm',
+                bottom: '5mm',
+                left: '5mm',
+            },
         });
         await exit();
         await browser.close();
