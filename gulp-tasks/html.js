@@ -7,10 +7,11 @@ const htmlmin = require('gulp-htmlmin');
 const util = require('gulp-util');
 
 
-const html = () => gulp.src([
-    `./src/html/**/*.njk`,
-    `!./src/html/**/_*.njk`
-])
+const html = () => gulp
+    .src([
+        `./src/html/**/*.njk`,
+        `!./src/html/**/_*.njk`
+    ])
     .pipe(data(() => {
         return require('../options/common')
     }))
@@ -28,13 +29,8 @@ const html = () => gulp.src([
         removeStyleLinkTypeAttributes: true
     }) : util.noop())
     .pipe(gulp.dest(`./dest/`));
-;
 
-const watcher = (cb) => {
-    console.log(`watch html in './src/html/**/*.njk'`);
-    gulp.watch(`./src/html/**/*.njk`, html);
-    return cb();
-};
+const watcher = () => gulp.watch(`./src/html/**/*.njk`, html);
 
 const htmlWatcher = gulp.series(html, watcher);
 
