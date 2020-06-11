@@ -5,31 +5,22 @@ const puppeteer = require('puppeteer');
 const options = require('./options/common');
 const htmlTask = require('./gulp-tasks/html');
 const stylesTask = require('./gulp-tasks/styles');
-const jsTask = require('./gulp-tasks/scripts');
 const imagesTask = require('./gulp-tasks/images');
 
 
 const html = () => htmlTask.html();
-
 exports.html = html;
 
 const css = () => stylesTask.styles();
-
 exports.css = css;
 
-const js = () => jsTask.scripts();
-
-exports.js = js;
-
 const images = () => imagesTask.images();
-
 exports.images = images;
 
 const server = () => connect.server({
     root: `./dest/`,
     livereload: false,
 });
-
 exports.server = server;
 
 const pdf = async (cb) => {
@@ -55,33 +46,28 @@ const pdf = async (cb) => {
 
     connect.serverClose();
 };
-
 exports.pdf = pdf;
 
 const copy = () => gulp
     .src('./src/copyInRoot/**/*')
     .pipe(gulp.dest('./dest/'));
-
 exports.copy = copy;
 
 const watch = () => gulp.series(
     gulp.parallel(
         htmlTask.htmlWatcher,
         stylesTask.cssWatcher,
-        jsTask.jsWatcher,
         imagesTask.imagesWatcher,
         copy
     ),
     server
 );
-
 exports.watch = watch;
 
 exports.default = gulp.series(
     gulp.parallel(
         html,
         css,
-        js,
         images,
         copy
     ),
