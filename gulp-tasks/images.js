@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 
+
 const images = () => gulp
     .src(`./src/images/**/*.*`)
     .pipe(gulp.dest(`./dest/images/`));
@@ -12,4 +13,8 @@ const watcher = (cb) => {
 
 const imagesWatcher = gulp.series(images, watcher);
 
-module.exports = {images, imagesWatcher};
+
+module.exports = {
+    images,
+    imagesWatcher
+};

@@ -5,8 +5,6 @@ const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const notify = require('gulp-notify');
 
-const config = require('./_config');
-
 /**
  * build scripts
  * sourcemaps only for dev env
@@ -18,13 +16,13 @@ const scripts = () => gulp.src([
     `!./src/js/**/_*.js`,
     `!./src/js/libs/**/*.*`
 ])
-    .pipe(config.production ? util.noop() : sourcemaps.init({
+    .pipe(!!util.env.production ? util.noop() : sourcemaps.init({
         loadMaps: true
     }))
     .pipe(babel())
     .on('error', notify.onError())
-    .pipe(config.production ? util.noop() : sourcemaps.write())
-    .pipe(config.production ? uglify() : util.noop())
+    .pipe(!!util.env.production ? util.noop() : sourcemaps.write())
+    .pipe(!!util.env.production ? uglify() : util.noop())
     .pipe(gulp.dest(`./dest/js/`));
 
 /**
@@ -42,4 +40,9 @@ const watcher = (cb) => {
 
 const jsWatcher = gulp.series(scripts, jsLibs, watcher);
 
-module.exports = {scripts, jsWatcher, jsLibs};
+
+module.exports = {
+    scripts,
+    jsWatcher,
+    jsLibs
+};
