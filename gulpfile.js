@@ -1,4 +1,4 @@
-const options = require('./assets/options.js');
+const options = require('./options/common');
 
 const gulp = require('gulp');
 const connect = require('gulp-connect');

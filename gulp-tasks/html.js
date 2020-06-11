@@ -13,7 +13,7 @@ const html = () => gulp.src([
     `!./src/html/**/_*.njk`
 ])
     .pipe(data(() => {
-        return require('../assets/options.js')
+        return require('../options/common')
     }))
     .pipe(nunjucks.compile())
     .on('error', notify.onError())
