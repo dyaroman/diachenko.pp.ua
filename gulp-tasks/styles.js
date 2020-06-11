@@ -6,7 +6,6 @@ const notify = require('gulp-notify');
 const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
 
-const config = require('./_config');
 
 /**
  * build styles from '*.less' to '*.css'
@@ -18,7 +17,7 @@ const styles = () => gulp.src([
     `./src/css/**/*.less`,
     `!./src/css/**/_*.less`
 ])
-    .pipe(config.production ? util.noop() : sourcemaps.init({
+    .pipe(!!util.env.production ? util.noop() : sourcemaps.init({
         loadMaps: true
     }))
     .pipe(less())
@@ -27,8 +26,8 @@ const styles = () => gulp.src([
         browsers: ['last 2 versions', 'ie 11'],
         cascade: false
     }))
-    .pipe(config.production ? util.noop() : sourcemaps.write())
-    .pipe(config.production ? csso() : util.noop())
+    .pipe(!!util.env.production ? util.noop() : sourcemaps.write())
+    .pipe(!!util.env.production ? csso() : util.noop())
     .pipe(gulp.dest(`./dest/css`));
 
 const watcher = (cb) => {
@@ -39,4 +38,8 @@ const watcher = (cb) => {
 
 const cssWatcher = gulp.series(styles, watcher);
 
-module.exports = { styles, cssWatcher };
+
+module.exports = {
+    styles,
+    cssWatcher
+};

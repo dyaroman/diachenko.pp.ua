@@ -1,13 +1,13 @@
-const options = require('./options/common');
-
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const puppeteer = require('puppeteer');
 
+const options = require('./options/common');
 const htmlTask = require('./gulp-tasks/html');
 const stylesTask = require('./gulp-tasks/styles');
 const jsTask = require('./gulp-tasks/scripts');
 const imagesTask = require('./gulp-tasks/images');
+
 
 gulp.task('html', () => {
     console.log(`build html`);

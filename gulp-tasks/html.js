@@ -5,7 +5,6 @@ const notify = require('gulp-notify');
 const rename = require('gulp-rename');
 const htmlmin = require('gulp-htmlmin');
 const util = require('gulp-util');
-const config = require('./_config');
 
 
 const html = () => gulp.src([
@@ -20,7 +19,7 @@ const html = () => gulp.src([
     .pipe(rename({
         extname: ".html"
     }))
-    .pipe(config.production ? htmlmin({
+    .pipe(!!util.env.production ? htmlmin({
         collapseWhitespace: true,
         collapseInlineTagWhitespace: true,
         decodeEntities: true,
@@ -36,7 +35,9 @@ const watcher = (cb) => {
     gulp.watch(`./src/html/**/*.njk`, html);
     return cb();
 };
+
 const htmlWatcher = gulp.series(html, watcher);
+
 
 module.exports = {
     html,
