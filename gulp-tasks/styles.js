@@ -13,10 +13,11 @@ const csso = require('gulp-csso');
  * autoprefixer
  * minification styles only for prod env
  */
-const styles = () => gulp.src([
-    `./src/css/**/*.less`,
-    `!./src/css/**/_*.less`
-])
+const styles = () => gulp
+    .src([
+        `./src/css/**/*.less`,
+        `!./src/css/**/_*.less`
+    ])
     .pipe(!!util.env.production ? util.noop() : sourcemaps.init({
         loadMaps: true
     }))
@@ -30,11 +31,7 @@ const styles = () => gulp.src([
     .pipe(!!util.env.production ? csso() : util.noop())
     .pipe(gulp.dest(`./dest/css`));
 
-const watcher = (cb) => {
-    console.log(`watch css in './src/css/**/*.less'`);
-    gulp.watch(`./src/css/**/*.less`, styles);
-    return cb();
-};
+const watcher = () => gulp.watch(`./src/css/**/*.less`, styles);
 
 const cssWatcher = gulp.series(styles, watcher);
 

@@ -9,83 +9,81 @@ const jsTask = require('./gulp-tasks/scripts');
 const imagesTask = require('./gulp-tasks/images');
 
 
-gulp.task('html', () => {
-    console.log(`build html`);
-    return htmlTask.html();
+const html = () => htmlTask.html();
+
+exports.html = html;
+
+const css = () => stylesTask.styles();
+
+exports.css = css;
+
+const js = () => jsTask.scripts();
+
+exports.js = js;
+
+const images = () => imagesTask.images();
+
+exports.images = images;
+
+const server = () => connect.server({
+    root: `./dest/`,
+    livereload: false,
 });
 
-gulp.task('css', () => {
-    console.log(`build css`);
-    return stylesTask.styles();
-});
+exports.server = server;
 
-gulp.task('js', () => {
-    console.log(`build js`);
-    jsTask.jsLibs();
-    return jsTask.scripts();
-});
+const pdf = async (cb) => {
+    server();
 
-gulp.task('images', () => {
-    console.log(`build images`);
-    return imagesTask.images();
-});
-
-gulp.task('server', () => {
-    connect.server({
-        root: `./dest/`,
-        livereload: false,
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    const page = await browser.newPage();
+    await page.goto(`http://localhost:8080`, {
+        waitUntil: 'networkidle0',
     });
-});
+    await page.emulateMedia('print');
+    await page.pdf({
+        path: `./dest/${options.fullName.replace(' ', '_')}.pdf`,
+        format: 'A4',
+        margin: {
+            top: '5mm',
+            right: '5mm',
+            bottom: '5mm',
+            left: '5mm',
+        },
+    });
+    await browser.close();
 
-gulp.task('watch', (cb) => {
-    htmlTask.htmlWatcher();
-    stylesTask.cssWatcher();
-    jsTask.jsWatcher();
-    imagesTask.imagesWatcher();
-    gulp.task('copy')();
-    gulp.task('server')();
-    return cb();
-});
+    connect.serverClose();
+};
 
-gulp.task('pdf', () => {
-    gulp.task('server')();
+exports.pdf = pdf;
 
-    const exit = process.exit;
+const copy = () => gulp
+    .src('./src/copyInRoot/**/*')
+    .pipe(gulp.dest('./dest/'));
 
-    (async () => {
-        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-        const page = await browser.newPage();
-        await page.goto(`http://localhost:8080`, {
-            waitUntil: 'networkidle0',
-        });
-        await page.emulateMedia('print');
-        await page.pdf({
-            path: `./dest/${options.fullName.replace(' ', '_')}.pdf`,
-            format: 'A4',
-            margin: {
-                top: '5mm',
-                right: '5mm',
-                bottom: '5mm',
-                left: '5mm',
-            },
-        });
-        await exit();
-        await browser.close();
-    })();
-});
+exports.copy = copy;
 
-gulp.task('copy', () => {
-    return gulp.src('./src/copyInRoot/**/*')
-        .pipe(gulp.dest('./dest/'));
-});
+const watch = () => gulp.series(
+    gulp.parallel(
+        htmlTask.htmlWatcher,
+        stylesTask.cssWatcher,
+        jsTask.jsWatcher,
+        imagesTask.imagesWatcher,
+        copy
+    ),
+    server
+);
 
-gulp.task('build', (cb) => {
-    gulp.task('html')();
-    gulp.task('css')();
-    gulp.task('js')();
-    gulp.task('images')();
-    gulp.task('pdf')();
-    gulp.task('copy')();
+exports.watch = watch;
 
-    cb();
-});
+exports.default = gulp.series(
+    gulp.parallel(
+        html,
+        css,
+        js,
+        images,
+        copy
+    ),
+    pdf
+);

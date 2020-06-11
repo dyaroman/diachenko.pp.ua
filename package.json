@@ -9,8 +9,8 @@
     },
     "main": "gulpfile.js",
     "scripts": {
-        "build": "gulp build",
-        "build:prod": "gulp build --production",
+        "build": "gulp",
+        "build:prod": "gulp --production",
         "start": "gulp watch"
     },
     "author": "Roman Diachenko <dyaroman@gmail.com>",
