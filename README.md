@@ -1,6 +1,6 @@
 # [diachenko.pp.ua](https://diachenko.pp.ua)
 
-[![Build Status](https://travis-ci.org/dyaroman/dyaroman.com.svg?branch=master)](https://travis-ci.org/dyaroman/dyaroman.com)
+![Build and Deploy](https://github.com/dyaroman/dyaroman.com/workflows/Build%20and%20Deploy/badge.svg?branch=master&event=push)
 
 ## Get started
 
