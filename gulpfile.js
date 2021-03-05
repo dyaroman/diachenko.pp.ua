@@ -69,19 +69,17 @@ const images = () => gulp
 exports.images = images;
 
 
-const server = (cb) => {
+const server = () => {
     connect.server({
         root: `./dest/`,
         livereload: false,
     });
-
-    cb();
 };
 
 exports.server = server;
 
 
-const pdf = async (cb) => {
+const pdf = async () => {
     server();
 
     const browser = await puppeteer.launch({args: ['--no-sandbox']});
@@ -103,8 +101,6 @@ const pdf = async (cb) => {
     await browser.close();
 
     connect.serverClose();
-
-    cb();
 };
 
 exports.pdf = pdf;
