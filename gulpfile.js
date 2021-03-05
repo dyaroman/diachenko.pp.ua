@@ -124,7 +124,10 @@ exports.watch = gulp.series(
         images,
         copy,
     ),
-    watch,
+    gulp.parallel(
+        watch,
+        server,
+    ),
 );
 
 
