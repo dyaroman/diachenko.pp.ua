@@ -9,7 +9,15 @@
 {% block content %}
     <div class="resume">
         <section>
-            <img width="250" height="250" src="./images/{{ fullName | lower | replace(' ', '_') }}.jpg" alt="{{ fullName }}" class="img">
+            <img
+                class="img"
+                width="250"
+                height="250"
+                src="images/{{ fullName | lower | replace(' ', '_') }}.jpg"
+                srcset="images/{{ fullName | lower | replace(' ', '_') }}.jpg,
+                images/{{ fullName | lower | replace(' ', '_') }}@2x.jpg 2x"
+                alt="{{ fullName }}"
+            >
 
             <h1>
                 {{ firstName }}
