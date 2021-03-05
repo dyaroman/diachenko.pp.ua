@@ -69,15 +69,19 @@ const images = () => gulp
 exports.images = images;
 
 
-const server = () => connect.server({
-    root: `./dest/`,
-    livereload: false,
-});
+const server = (cb) => {
+    connect.server({
+        root: `./dest/`,
+        livereload: false,
+    });
+
+    cb();
+};
 
 exports.server = server;
 
 
-const pdf = async () => {
+const pdf = async (cb) => {
     server();
 
     const browser = await puppeteer.launch({args: ['--no-sandbox']});
@@ -99,6 +103,8 @@ const pdf = async () => {
     await browser.close();
 
     connect.serverClose();
+
+    cb();
 };
 
 exports.pdf = pdf;
@@ -110,11 +116,13 @@ const copy = () => gulp.src('./src/copyInRoot/**/*')
 exports.copy = copy;
 
 
-const watch = () => {
+const watch = (cb) => {
     gulp.watch(`./src/html/**/*.njk`, gulp.series(html));
     gulp.watch(`./src/css/**/*.less`, gulp.series(css));
     gulp.watch(`./src/images/**/*.*`, gulp.series(images));
     gulp.watch(`./src/copyInRoot/**/*`, gulp.series(copy));
+
+    cb();
 };
 
 exports.watch = gulp.series(
