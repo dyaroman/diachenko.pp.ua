@@ -56,7 +56,7 @@ h2 {
     @media print,
     (min-width: @mobile) {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 2fr 1fr;
         grid-template-rows: repeat(2, min-content);
         grid-column-gap: @gap;
     }
@@ -90,43 +90,6 @@ h2 {
     }
 }
 
-.download {
-    display: block;
-    height: 50px;
-    min-width: 50px;
-    padding: 0 12px;
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 14px;
-    line-height: 50px;
-    border-radius: 30px;
-    background-color: @primary-color;
-    color: @text-color;
-
-    @media (any-hover: hover) {
-        &:hover {
-            animation: pulse 2s infinite;
-        }
-    }
-
-    @supports (--color: green) {
-        background-color: var(--rd-primary-color, @primary-color);
-    }
-
-    @media (min-width: @mobile) {
-        content: 'download ';
-    }
-}
-
-@keyframes pulse {
-    50% {
-        box-shadow: 0 0 0 5px rgba(#000, 0.2);
-    }
-}
-
 @media print {
     :root {
         --rd-gap: 0;
@@ -143,27 +106,7 @@ h2 {
         box-shadow: none;
     }
 
-    section {
-        page-break-inside: avoid;
-    }
-
     a {
         display: inline-flex;
-    }
-
-    a[href^='http']:before {
-        content: 'http://';
-    }
-
-    a[href^='https']:before {
-        content: 'https://';
-    }
-
-    a[href$='.com/']:after {
-        content: '.com';
-    }
-
-    .download {
-        display: none;
     }
 }

@@ -135,12 +135,9 @@ exports.watch = gulp.series(
 );
 
 
-exports.default = gulp.series(
-    gulp.parallel(
-        html,
-        css,
-        images,
-        copy,
-    ),
-    pdf,
+exports.default = gulp.parallel(
+    html,
+    css,
+    images,
+    copy,
 );
