@@ -1,0 +1,149 @@
+:root {
+  --rd-gap: 5px;
+  --rd-primary-color: #19c953;
+  --rd-text-color: #333;
+  --rd-body-bg: #ccc;
+  --rd-resume-bg: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rd-text-color: #ccc;
+    --rd-resume-bg: #333;
+  }
+}
+
+@media (min-width: 720px) {
+  :root {
+    --rd-gap: 15px;
+  }
+}
+
+body {
+  font-family: "Google Sans Code", "Courier New", Courier, monospace;
+  font-weight: 400;
+  font-size: 1em;
+  box-sizing: border-box;
+  line-height: 1.5;
+  color: #333;
+}
+
+* {
+  box-sizing: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+@supports (--color: green) {
+  body {
+    color: var(--rd-text-color, #333);
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+a:focus {
+  outline: 2px solid #19c953;
+}
+
+@supports (--color: green) {
+  a:focus {
+    outline-color: var(--rd-primary-color, #19c953);
+  }
+}
+
+@media (min-width: 720px) {
+  a:focus {
+    text-decoration: none;
+  }
+}
+
+.resume,
+body {
+  padding: 15px;
+  margin: 0;
+  background-color: #ccc;
+}
+
+@supports (--color: green) {
+  body {
+    padding: var(--rd-gap, 15px);
+    background-color: var(--rd-body-bg, #ccc);
+  }
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  h1,
+  h2 {
+    text-align: left;
+  }
+}
+
+.resume {
+  max-width: 21cm;
+  width: 100%;
+  margin: auto;
+  hyphens: auto;
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+}
+
+@media (min-width: 720px) {
+  .resume {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, -webkit-min-content);
+    grid-template-rows: repeat(2, min-content);
+    grid-column-gap: 15px;
+    min-height: 29.68cm;
+  }
+}
+
+@supports (--color: green) {
+  .resume {
+    padding: var(--rd-gap, 15px);
+    background-color: var(--rd-resume-bg, #fff);
+  }
+
+  @media (min-width: 720px) {
+    .resume {
+      grid-column-gap: var(--rd-gap, 15px);
+    }
+  }
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+@media (min-width: 720px) {
+  .img {
+    margin: 0;
+  }
+}
+
+.experience,
+.skills {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 720px) {
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
