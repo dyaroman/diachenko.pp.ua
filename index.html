@@ -79,13 +79,16 @@
         <h2>Skills</h2>
         <ul class="skills-list">
           <li>English: Upper-Intermediate</li>
-          <li>JS: Senior</li>
           <li>HTML: Nunjucks, Twig</li>
           <li>CSS: SCSS, LESS</li>
-          <li>Frameworks: Vue, React, Next.js</li>
-          <li>Backend: NodeJS, NestJS</li>
+          <li>JS: Vue, React</li>
+          <li>Backend: NodeJS, Hono</li>
           <li>Database: MongoDB, PostgreSQL, SQLite</li>
-          <li>Other: Git, Docker, CodeceptJS (Playwright), Gulp, Vite</li>
+          <li>
+            Tools & Testing: Git, Azure DevOps, Docker, CodeceptJS (Playwright),
+            Vite, Gulp
+          </li>
+          <li>Cloud/Services: Cloudflare Workers, Supabase, Google Cloud</li>
         </ul>
       </section>
 
@@ -97,41 +100,41 @@
           <em>September 2017 — January 2026</em>
           <ul>
             <li>
-              Scaled and maintained a portfolio of 500+ websites using a
-              template-based system and Gulp-driven automation.
+              Developed a feature-rich React and Redux application to manage a
+              portfolio of 500+ websites, implementing advanced filtering,
+              sorting, and an extensive hotkey system to optimize administrative
+              workflows.
             </li>
             <li>
-              Collaborated with design teams from project inception to ensure
-              high-quality UI/UX and technical feasibility.
+              Optimized build process for a monorepo with 500+ websites by
+              implementing a Node.js script that detects changed sites and
+              builds only those, reducing build time from 40 minutes to 40
+              seconds.
+            </li>
+            <li>
+              Managed workflows and automation using Azure DevOps, including
+              reproducibility across pipelines and repository management.
+            </li>
+            <li>
+              Built a Vue.js dashboard to visualize e2e test results, improving
+              visibility for the QA team.
+            </li>
+            <li>
+              Supported the QA team by writing automated UI tests with
+              CodeceptJS (Playwright), developing custom helpers for complex
+              scenarios like network payload validation.
+            </li>
+            <li>
+              Created and implemented a template-based system to scale and
+              maintain a portfolio of 500+ websites.
             </li>
             <li>
               Partnered with backend developers to define API contracts and
               ensure seamless frontend-backend integration.
             </li>
             <li>
-              Worked with DevOps to optimize CI/CD pipelines, implementing
-              "smart builds" to reduce deployment time and server load.
-            </li>
-            <li>
-              Supported the QA team by writing automated UI tests with
-              CodeceptJS (Playwright) and developing custom helpers for complex
-              scenarios like network payload validation.
-            </li>
-            <li>
-              Developed internal tools improving team productivity and work
-              quality.
-            </li>
-            <li>
-              Assisted teammates with local environment configuration and shared
-              best practices through mentoring and code reviews.
-            </li>
-            <li>
-              Managed routine maintenance, including Node.js version upgrades,
-              dependency updates, and refactoring legacy code.
-            </li>
-            <li>
-              Actively participated in daily standups and cross-functional
-              meetings to align on project goals.
+              Set up pre-commit hooks with Prettier across all projects to
+              maintain consistent code style and readability.
             </li>
           </ul>
         </article>
@@ -190,25 +193,37 @@
       </section>
 
       <section>
-        <h2>Pet Projects: Backend Experience</h2>
-        <p>
-          In addition to frontend work, I actively develop Node.js backends
-          (NestJS) for personal projects. I work with databases such as
-          PostgreSQL, MongoDB, and SQLite to build end-to-end samples that
-          deepen my understanding of API design, data modeling, and integration.
-        </p>
+        <h2>Pet Projects</h2>
         <ul>
           <li>
-            Built small NestJS REST APIs with PostgreSQL (TypeORM/Prisma) for
-            CRUD examples.
+            <strong>Cloudflare Workers</strong>
+            <ul>
+              <li>
+                <strong>Telegram channel automation</strong> — Worker fetches
+                movie and TV show information from external APIs and
+                automatically posts to my Telegram channel.
+              </li>
+              <li>
+                <strong>Bank receipt recognizer</strong> — Worker parses bank
+                transaction descriptions to identify utility addresses and
+                types, returning structured data to Apple Shortcuts for further
+                processing.
+              </li>
+            </ul>
           </li>
           <li>
-            Implemented data stores with MongoDB for document-based models in
-            side projects.
+            <strong>Supabase Edge Functions</strong> — Used as a lightweight
+            backend for an internal tool, replacing the need for a full REST
+            API.
           </li>
           <li>
-            Prototype SQLite-backed tooling and microservices for local
-            experiments.
+            <strong>Google Cloud</strong>
+            <ul>
+              <li>
+                <strong>Compute Engine</strong> — Set up and configured
+                instances for personal usage and experiments.
+              </li>
+            </ul>
           </li>
         </ul>
       </section>
