@@ -78,19 +78,24 @@
   </header>
 
   <section>
+    <p>
+      Frontend Developer with 8+ years of experience, including 4+ years building React and Vue applications. Started as
+      an HTML developer and grew into building complex admin systems, CI/CD pipelines, and serverless automation.
+      Seeking a product team with challenging frontend problems.
+    </p>
+  </section>
+
+  <section>
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li>English: Upper-Intermediate</li>
+      <li>JavaScript / TypeScript: React (Redux Toolkit, Context API), Vue (Pinia)</li>
       <li>HTML: Nunjucks, Twig</li>
-      <li>CSS: SCSS, LESS</li>
-      <li>JS: Vue, React, TypeScript</li>
-      <li>Backend: NodeJS, Hono</li>
-      <li>Database: MongoDB, PostgreSQL, SQLite</li>
-      <li>
-        Tools & Testing: Git, Azure DevOps, Docker, CodeceptJS (Playwright),
-        Vite, Gulp
-      </li>
-      <li>Cloud/Services: Cloudflare Workers, Supabase, Google Cloud</li>
+      <li>CSS: SCSS, LESS, BEM, mobile-first; familiar with Tailwind</li>
+      <li>Tools: Git, Docker, Vite, Figma (design handoff)</li>
+      <li>Testing: CodeceptJS (Playwright)</li>
+      <li>CI/CD: Azure DevOps, GitHub Actions</li>
+      <li>Cloud / Services: Cloudflare Workers, Supabase, Google Cloud</li>
+      <li>Familiar with: Next.js, NodeJS, Hono, MongoDB, PostgreSQL, SQLite, React Query</li>
     </ul>
   </section>
 
@@ -99,46 +104,31 @@
     <article>
       <h3>LeadsMarket</h3>
       <h4>Frontend Developer</h4>
-      <em>September 2021 — January 2026</em>
+      <em>September 2017 — January 2026</em>
       <ul>
         <li>
-          Developed a feature-rich React and Redux application to manage a
-          portfolio of 500+ websites, implementing advanced filtering,
-          sorting, and an extensive hotkey system to optimize administrative
-          workflows.
+          Reduced build time from 40 minutes to ~40 seconds in incremental scenarios by writing a Node.js script that
+          detects and builds only changed sites across a 500+ site monorepo
         </li>
         <li>
-          Optimized build process for a monorepo with 500+ websites by
-          implementing a Node.js script that detects changed sites and
-          builds only those, reducing build time from 40 minutes to 40
-          seconds.
+          Built a React/Redux admin panel to manage a portfolio of 500+ websites with advanced filtering, sorting, and a
+          custom hotkey system
         </li>
         <li>
-          Managed workflows and automation using Azure DevOps, including
-          reproducibility across pipelines and repository management.
+          Developed a Vue.js dashboard to visualize e2e test results, reducing QA investigation time
         </li>
         <li>
-          Built a Vue.js dashboard to visualize e2e test results, improving
-          visibility for the QA team.
+          Supported the QA team with CodeceptJS (Playwright) setup: mentored on implementation, and developed custom
+          helpers for complex scenarios like network payload validation
         </li>
         <li>
-          Supported the QA team by writing automated UI tests with
-          CodeceptJS (Playwright), developing custom helpers for complex
-          scenarios like network payload validation.
+          Defined API contracts with backend developers; set up Prettier pre-commit hooks across all projects
         </li>
         <li>
-          Created and implemented a template-based system to scale and
-          maintain a portfolio of 500+ websites.
-        </li>
-        <li>
-          Partnered with backend developers to define API contracts and
-          ensure seamless frontend-backend integration.
-        </li>
-        <li>
-          Set up pre-commit hooks with Prettier across all projects to
-          maintain consistent code style and readability.
+          Managed CI/CD pipelines and repo workflows via Azure DevOps
         </li>
       </ul>
+
     </article>
   </section>
 
@@ -149,31 +139,24 @@
         <strong>Cloudflare Workers</strong>
         <ul>
           <li>
-            <strong>Telegram channel automation</strong> — Worker fetches
-            movie and TV show information from external APIs and
-            automatically posts to my Telegram channel.
+            <strong>Telegram channel automation</strong> — Built an automation pipeline
+            using Apple Shortcuts + Cloudflare Worker: a shortcut sends an IMDB URL to
+            the Worker, which stores it in KV storage and publishes to a Telegram channel
+            via a daily cron trigger.
           </li>
           <li>
-            <strong>Bank receipt recognizer</strong> — Worker parses bank
-            transaction descriptions to identify utility addresses and
-            types, returning structured data to Apple Shortcuts for further
-            processing.
+            <strong>Bank receipt organizer</strong> — Worker receives PDF receipt content
+            via Apple Shortcuts, extracts the utility service name and address using
+            predefined rules, and returns structured data back to the shortcut — which
+            automatically renames the file and saves it to the correct directory
+            (e.g. Services/Address/Year/Month/Service name).
           </li>
         </ul>
       </li>
       <li>
-        <strong>Supabase Edge Functions</strong> — Used as a lightweight
-        backend for an internal tool, replacing the need for a full REST
-        API.
-      </li>
-      <li>
-        <strong>Google Cloud</strong>
-        <ul>
-          <li>
-            <strong>Compute Engine</strong> — Set up and configured
-            instances for personal usage and experiments.
-          </li>
-        </ul>
+        <strong>Supabase Edge Functions</strong> — Used as a backend for a
+        React/Redux site management tool: handles API logic and data layer
+        without a dedicated server.
       </li>
     </ul>
   </section>

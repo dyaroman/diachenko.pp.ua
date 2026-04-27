@@ -119,9 +119,9 @@ body {
     box-shadow: none;
   }
 
-  section,
+  /*section,
   article {
     page-break-inside: avoid;
     break-inside: avoid;
-  }
+  }*/
 }
