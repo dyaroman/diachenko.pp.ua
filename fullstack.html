@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Roman Diachenko | Fullstack Developer</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta
+    name="description"
+    content="Roman Diachenko is a fullstack developer with strong frontend specialization, building product features across UI, automation, and backend services."
+  />
+
+  <link rel="canonical" href="https://www.diachenko.pp.ua/fullstack.html"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+  <meta property="og:title" content="Roman Diachenko | Fullstack Developer"/>
+  <meta property="og:type" content="profile"/>
+  <meta
+    property="og:description"
+    content="Roman Diachenko is a fullstack developer with strong frontend specialization, building product features across UI, automation, and backend services."
+  />
+  <meta property="og:url" content="https://www.diachenko.pp.ua/fullstack.html"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="profile:first_name" content="Roman"/>
+  <meta property="profile:last_name" content="Diachenko"/>
+  <meta property="profile:username" content="dyaroman"/>
+  <meta property="og:site_name" content="Roman Diachenko"/>
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="./images/favicons/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="./images/favicons/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="./images/favicons/favicon-16x16.png"
+  />
+  <link rel="manifest" href="./images/favicons/manifest.json"/>
+  <link rel="shortcut icon" href="./images/favicons/favicon.ico"/>
+  <meta name="theme-color" content="#ffffff"/>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./index.css"/>
+</head>
+
+<body>
+<div class="resume">
+  <header>
+    <h1>Roman Diachenko</h1>
+    <p>Fullstack Developer</p>
+    <ul class="contact-list">
+      <li>Dnipro, Ukraine</li>
+      <li>
+        <a href="mailto:dyaroman@gmail.com" target="_blank" rel="noopener">
+          dyaroman@gmail.com
+        </a>
+      </li>
+      <li>
+        <a href="https://t.me/dyaroman" target="_blank" rel="noopener">
+          t.me/dyaroman
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <section>
+    <p>
+      Fullstack Developer with 8+ years of experience and strong frontend roots. Most recently at LeadsMarket,
+      built and maintained internal tooling for a large portfolio of websites across React and Vue interfaces,
+      Node.js automation, CI/CD workflows, and lightweight backend services. Looking for a product team where
+      end-to-end ownership and architectural thinking matter.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Frontend: JavaScript / TypeScript, React (Redux Toolkit, Context API), Vue (Pinia)</li>
+      <li>Backend / Runtime: Node.js, Hono, Cloudflare Workers, Supabase Edge Functions</li>
+      <li>Data: MongoDB, PostgreSQL, SQLite, Supabase</li>
+      <li>HTML / Templates: Nunjucks, Twig</li>
+      <li>CSS: SCSS, LESS, BEM, mobile-first; familiar with Tailwind</li>
+      <li>Testing: CodeceptJS (Playwright)</li>
+      <li>CI/CD / Delivery: Azure DevOps, GitHub Actions, Docker, Vite</li>
+      <li>Familiar with: Next.js, React Query, Google Cloud, Figma (design handoff)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <article>
+      <h3>LeadsMarket</h3>
+      <h4>Fullstack Developer</h4>
+      <em>September 2017 — January 2026</em>
+      <ul>
+        <li>
+          Built and maintained internal tooling for a 500+ site portfolio, covering frontend applications,
+          supporting automation, and delivery workflows used across the company
+        </li>
+        <li>
+          Reduced build time from 40 minutes to ~40 seconds in incremental scenarios by writing a Node.js script
+          that detects and builds only changed sites across a large monorepo
+        </li>
+        <li>
+          Built a React/Redux admin panel from scratch that became the main tool for managing the portfolio
+          company-wide, with advanced filtering, sorting, and a custom hotkey system
+        </li>
+        <li>
+          Helped the QA team adopt Playwright-based e2e testing by choosing the technology, mentoring the
+          implementation, and building custom helpers for complex scenarios such as network payload validation
+        </li>
+        <li>
+          Worked closely with backend and QA teams to define API contracts and deliver internal systems that
+          required coordinated frontend, backend, and testing decisions
+        </li>
+        <li>
+          Managed CI/CD pipelines and repo workflows in Azure DevOps, including shared quality gates and
+          pre-commit automation across projects
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Pet Projects</h2>
+    <ul>
+      <li>
+        <strong>Cloudflare Workers</strong>
+        <ul>
+          <li>
+            <strong>Telegram channel automation</strong> — Built an automation pipeline using Apple Shortcuts
+            and a Cloudflare Worker: a shortcut sends an IMDB URL to the Worker, which stores it in KV storage
+            and publishes to a Telegram channel via a daily cron trigger.
+          </li>
+          <li>
+            <strong>Bank receipt organizer</strong> — Worker receives PDF receipt content via Apple Shortcuts,
+            extracts the utility service name and address using predefined rules, and returns structured data
+            back to the shortcut, which renames the file and saves it to the correct directory structure.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Supabase Edge Functions</strong> — Used as a backend for a React/Redux site management tool:
+        handled API logic and data access without a dedicated server.
+      </li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
