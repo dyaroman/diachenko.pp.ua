@@ -1,0 +1,16 @@
+{
+  "name": "diachenko.pp.ua",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyaroman/diachenko.pp.ua.git"
+  },
+  "scripts": {
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5",
+    "prettier": "^3.8.3"
+  }
+}
