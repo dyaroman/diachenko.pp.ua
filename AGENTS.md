@@ -3,6 +3,7 @@
 ## Project Overview
 
 This is a simple static website - a personal resume/portfolio. It consists of:
+
 - `index.html` - Main HTML document
 - `index.css` - Stylesheet
 - `images/` - Favicon assets
@@ -14,6 +15,7 @@ No JavaScript framework, no build system, no tests.
 ## Commands
 
 ### Development
+
 There is no development server or build process. The site can be viewed by opening `index.html` directly in a browser, or served locally:
 
 ```bash
@@ -25,13 +27,17 @@ npx serve .
 ```
 
 ### Testing
+
 No tests exist for this project.
 
 ### Linting
+
 No linting is configured.
 
 ### Deployment
+
 The site is hosted at https://www.diachenko.pp.ua via a static hosting provider. Upload the following files:
+
 - `index.html`
 - `index.css`
 - `images/` directory (entire contents)
@@ -41,11 +47,13 @@ The site is hosted at https://www.diachenko.pp.ua via a static hosting provider.
 ## Code Style Guidelines
 
 ### General Principles
+
 - Keep it simple - this is a static resume site
 - Prioritize accessibility and readability
 - Use semantic HTML
 
 ### HTML
+
 - Use HTML5 doctype: `<!doctype html>`
 - Include lang attribute: `<html lang="en">`
 - Include meta viewport for responsiveness
@@ -55,6 +63,7 @@ The site is hosted at https://www.diachenko.pp.ua via a static hosting provider.
 - Self-closing tags: use `<link ... />`, `<meta ... />`, `<br />`, etc.
 
 ### CSS
+
 - Use CSS custom properties (variables) via `:root`
 - Support CSS features with `@supports` fallbacks for older browsers
 - Use responsive design with `@media` queries (breakpoint: 720px)
@@ -66,12 +75,14 @@ The site is hosted at https://www.diachenko.pp.ua via a static hosting provider.
 - Include focus states for accessibility: `a:focus { outline: ... }`
 
 ### Accessibility
+
 - Always include focus outlines for keyboard navigation
 - Use proper heading hierarchy (h1 → h2 → h3)
 - Include meta descriptions
 - Use descriptive link text (not "click here")
 
 ### Formatting
+
 - Follow `.editorconfig`: 2-space indentation, LF line endings, UTF-8
 - Use double quotes for attributes in HTML
 - Use double quotes for strings in CSS
@@ -80,19 +91,23 @@ The site is hosted at https://www.diachenko.pp.ua via a static hosting provider.
 - Keep lines under 100 characters when practical
 
 ### Performance
+
 - Use `rel="preconnect"` for external font resources
 - Include appropriate favicon sizes (16x16, 32x32, 180x180)
 - Use system fonts or Google Fonts with display swap
 
 ### Naming Conventions
+
 - Classes: lowercase with hyphens (e.g., `.contact-list`, `.skills-list`)
 - Custom properties: lowercase with hyphens, prefixed (e.g., `--rd-gap`)
 - IDs: avoid unless necessary (use classes instead)
 
 ### Error Handling
+
 N/A - static HTML/CSS only
 
 ### Git
+
 - Commit messages: imperative mood ("Add" not "Added")
 - Keep commits focused and atomic
 
