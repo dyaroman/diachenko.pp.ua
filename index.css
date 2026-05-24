@@ -95,7 +95,7 @@ a:focus {
   }
 }
 
-.resume,
+main,
 body {
   padding: 15px;
   margin: 0;
@@ -109,6 +109,18 @@ body {
   }
 }
 
+address {
+  font-style: normal;
+}
+
+time {
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
 @media (min-width: 720px) {
   .contact-list {
     display: flex;
@@ -117,7 +129,7 @@ body {
   }
 }
 
-.resume {
+main {
   max-width: 21cm;
   width: 100%;
   margin: auto;
@@ -127,7 +139,7 @@ body {
 }
 
 @supports (--color: green) {
-  .resume {
+  main {
     padding: var(--rd-gap, 15px);
     background-color: var(--rd-resume-bg, #fff);
   }
@@ -141,7 +153,7 @@ body {
 }
 
 @media print {
-  .resume {
+  main {
     box-shadow: none;
   }
 

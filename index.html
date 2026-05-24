@@ -58,31 +58,37 @@
   </head>
 
   <body>
-    <div class="resume">
+    <main>
       <header>
         <h1>Roman Diachenko</h1>
         <p>Frontend Developer</p>
-        <ul class="contact-list">
-          <li>Dnipro, Ukraine</li>
-          <li>
-            <a href="mailto:dyaroman@gmail.com" target="_blank" rel="noopener">
-              dyaroman@gmail.com
-            </a>
-          </li>
-          <li>
-            <a href="https://t.me/dyaroman" target="_blank" rel="noopener">
-              t.me/dyaroman
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/dyaroman"
-              target="_blank"
-              rel="noopener"
-              >linkedin.com/in/dyaroman</a
-            >
-          </li>
-        </ul>
+        <address>
+          <ul class="contact-list">
+            <li>Dnipro, Ukraine</li>
+            <li>
+              <a
+                href="mailto:dyaroman@gmail.com"
+                target="_blank"
+                rel="noopener"
+              >
+                dyaroman@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/dyaroman" target="_blank" rel="noopener">
+                t.me/dyaroman
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/dyaroman"
+                target="_blank"
+                rel="noopener"
+                >linkedin.com/in/dyaroman</a
+              >
+            </li>
+          </ul>
+        </address>
       </header>
 
       <section>
@@ -125,8 +131,8 @@
         <h2>Experience</h2>
         <article>
           <h3>LeadsMarket</h3>
-          <h4>Frontend Developer</h4>
-          <em>September 2017 – January 2026</em>
+          <p class="subtitle">Frontend Developer</p>
+          <time datetime="2017-09/2026-01">September 2017 – January 2026</time>
           <ul>
             <li>
               Built and maintained internal tooling for a 500+ site portfolio,
@@ -168,33 +174,37 @@
 
       <section>
         <h2>Pet Projects</h2>
-        <ul>
-          <li>
-            <strong>Cloudflare Workers</strong>
-            <ul>
-              <li>
-                <strong>Telegram channel automation</strong> – Built an
-                automation pipeline using Apple Shortcuts + Cloudflare Worker: a
-                shortcut sends an IMDB URL to the Worker, which stores it in KV
-                storage and publishes to a Telegram channel via a daily cron
-                trigger.
-              </li>
-              <li>
-                <strong>Bank receipt organizer</strong> – Worker receives PDF
-                receipt content via Apple Shortcuts, extracts the utility
-                service name and address using predefined rules, and returns
-                structured data back to the shortcut – which automatically
-                renames the file and saves it to the correct directory (e.g.
-                Services/Address/Year/Month/Service name).
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Supabase Edge Functions</strong> – Used as a backend for a
-            React/Redux site management tool: handles API logic and data layer
-            without a dedicated server.
-          </li>
-        </ul>
+        <article>
+          <h3>Cloudflare Workers</h3>
+          <ul>
+            <li>
+              <h4>Telegram channel automation</h4>
+              <p>
+                Built an automation pipeline using Apple Shortcuts + Cloudflare
+                Worker: a shortcut sends an IMDB URL to the Worker, which stores
+                it in KV storage and publishes to a Telegram channel via a daily
+                cron trigger.
+              </p>
+            </li>
+            <li>
+              <h4>Bank receipt organizer</h4>
+              <p>
+                Worker receives PDF receipt content via Apple Shortcuts,
+                extracts the utility service name and address using predefined
+                rules, and returns structured data back to the shortcut – which
+                automatically renames the file and saves it to the correct
+                directory (e.g. Services/Address/Year/Month/Service name).
+              </p>
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Supabase Edge Functions</h3>
+          <p>
+            Used as a backend for a React/Redux site management tool: handles
+            API logic and data layer without a dedicated server.
+          </p>
+        </article>
       </section>
 
       <section>
@@ -205,6 +215,6 @@
           <time datetime="2009/2014">2009 – 2014</time>
         </article>
       </section>
-    </div>
+    </main>
   </body>
 </html>
