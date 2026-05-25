@@ -157,9 +157,8 @@ main {
     box-shadow: none;
   }
 
-  /*section,
   article {
     page-break-inside: avoid;
     break-inside: avoid;
-  }*/
+  }
 }

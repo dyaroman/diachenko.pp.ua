@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
-      content="Roman Diachenko is a frontend developer with 10+ years in the Node.js ecosystem, building React and Vue interfaces, internal tools, automation, and lightweight backend services."
+      content="Roman Diachenko is a frontend developer with 10+ years in the Node.js ecosystem, building React and Vue interfaces, internal tooling, monorepo architecture, and serverless backend services."
     />
 
     <link rel="canonical" href="https://www.diachenko.pp.ua/" />
@@ -19,7 +19,7 @@
     <meta property="og:type" content="profile" />
     <meta
       property="og:description"
-      content="Roman Diachenko is a frontend developer with 10+ years in the Node.js ecosystem, building React and Vue interfaces, internal tools, automation, and lightweight backend services."
+      content="Roman Diachenko is a frontend developer with 10+ years in the Node.js ecosystem, building React and Vue interfaces, internal tooling, monorepo architecture, and serverless backend services."
     />
     <meta property="og:url" content="https://www.diachenko.pp.ua/" />
     <meta property="og:locale" content="en_US" />
@@ -112,13 +112,15 @@
             API), Vue (Pinia)
           </li>
           <li>
-            Node.js / Runtime: automation, Hono, Cloudflare Workers, Supabase
-            Edge Functions
+            Node.js: Hono, Cloudflare Workers, Supabase Edge Functions,
+            automation scripting
           </li>
           <li>Data: MongoDB, PostgreSQL, SQLite, Supabase</li>
           <li>HTML / Templates: Nunjucks, Twig</li>
-          <li>CSS: SCSS, LESS, BEM, mobile-first; familiar with Tailwind</li>
-          <li>Testing: CodeceptJS (Playwright)</li>
+          <li>
+            CSS: SCSS, LESS, BEM, mobile-first; <br />familiar with Tailwind
+          </li>
+          <li>Testing: CodeceptJS (Playwright), Vitest</li>
           <li>CI/CD / Delivery: Azure DevOps, GitHub Actions, Docker, Vite</li>
           <li>
             Familiar with: Next.js, React Query, Google Cloud, Figma (design
@@ -135,38 +137,67 @@
           <time datetime="2017-09/2026-01">September 2017 – January 2026</time>
           <ul>
             <li>
-              Built and maintained internal tooling for a 500+ site portfolio,
-              covering frontend applications, Node.js automation, and delivery
-              workflows used across the company
+              Proposed and led a full migration of 200+ sites from isolated
+              repos to a unified monorepo (Gulp, Nunjucks, SCSS, Babel) –
+              enabling content inheritance, shared components, and faster
+              delivery. The monorepo then scaled from 200 to 500+ sites over the
+              following years.
             </li>
             <li>
-              Reduced build time from 40 minutes to ~40 seconds in incremental
-              scenarios by writing a Node.js script that detects and builds only
-              changed sites across a 500+ site monorepo
+              Cut monorepo build time from 40 minutes to ~40 seconds by
+              authoring a Node.js script that detected and rebuilt only changed
+              sites using pipeline metadata.
             </li>
             <li>
-              Built a React/Redux admin panel to manage a portfolio of 500+
-              websites with advanced filtering, sorting, and a custom hotkey
-              system
+              Built a React/Redux internal admin panel to manage and query the
+              full 500+ site portfolio, with advanced filtering, sorting, and a
+              custom hotkey system – adopted company-wide by managers and
+              developers.
             </li>
             <li>
-              Developed a Vue.js dashboard to visualize e2e test results,
-              reducing QA investigation time
+              Designed a serverless backend for the admin panel using Supabase
+              Edge Functions (Hono), replacing earlier iterations with
+              Node.js/Express + MongoDB/PostgreSQL, iterated toward a cost-free,
+              scalable solution.
             </li>
             <li>
-              Supported the QA team with CodeceptJS (Playwright) setup: mentored
-              on implementation, and developed custom helpers for complex
-              scenarios like network payload validation
+              Built a Vue.js dashboard to visualize e2e test results, reducing
+              QA investigation time significantly.
             </li>
             <li>
-              Worked closely with backend and QA teams to define API contracts
-              and deliver internal systems, including frontend features,
-              supporting backend logic, and testing decisions
+              Supported QA team with CodeceptJS (Playwright) adoption: mentored
+              on implementation and built custom helpers for complex scenarios
+              including network payload validation.
             </li>
             <li>
-              Managed CI/CD pipelines and repo workflows in Azure DevOps,
-              including shared quality gates and pre-commit automation across
-              projects
+              Managed CI/CD pipelines in Azure DevOps including shared quality
+              gates and pre-commit automation across all projects.
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>FORFORCE / Digital Production</h3>
+          <p class="subtitle">Frontend Developer</p>
+          <time datetime="2016-03/2017-08">March 2016 – August 2017</time>
+          <ul>
+            <li>
+              Developed and maintained client websites as part of a team,
+              gaining experience in collaborative workflows, code review, and JS
+              fundamentals.
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Pixwhite</h3>
+          <p class="subtitle">Junior Frontend Developer</p>
+          <time datetime="2015-05/2016-02">May 2015 – February 2016</time>
+          <ul>
+            <li>
+              Built websites end-to-end for a design agency handling freelance
+              orders, covering HTML/CSS markup, layout, and cross-browser
+              compatibility.
             </li>
           </ul>
         </article>
@@ -197,13 +228,6 @@
               </p>
             </li>
           </ul>
-        </article>
-        <article>
-          <h3>Supabase Edge Functions</h3>
-          <p>
-            Used as a backend for a React/Redux site management tool: handles
-            API logic and data layer without a dedicated server.
-          </p>
         </article>
       </section>
 
