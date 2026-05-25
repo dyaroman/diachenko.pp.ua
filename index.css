@@ -123,9 +123,9 @@ time {
 
 @media (min-width: 720px) {
   .contact-list {
-    display: flex;
-
-    gap: calc(var(--rd-gap) * 3);
+    display: grid;
+    gap: 0 calc(var(--rd-gap) * 3);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
