@@ -145,13 +145,6 @@ main {
   }
 }
 
-@media (min-width: 720px) {
-  .skills-list {
-    column-count: 2;
-    column-gap: 40px;
-  }
-}
-
 @media print {
   main {
     box-shadow: none;
