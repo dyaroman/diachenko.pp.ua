@@ -1,0 +1,38 @@
+name: Generate PDF CV
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "CV_Roman_Diachenko.pdf"
+      - "pdf"
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install Playwright
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Generate PDF
+        run: node .github/scripts/generate-pdf.js
+
+      - name: Push PDF to pdf branch
+        run: |
+          cp CV_Roman_Diachenko.pdf /tmp/CV_Roman_Diachenko.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin pdf || true
+          git checkout pdf 2>/dev/null || { git checkout --orphan pdf && git rm -rf . --quiet; }
+          cp /tmp/CV_Roman_Diachenko.pdf CV_Roman_Diachenko.pdf
+          git add CV_Roman_Diachenko.pdf
+          git diff --staged --quiet || git commit -m "update CV_Roman_Diachenko.pdf"
+          git push --force origin pdf
